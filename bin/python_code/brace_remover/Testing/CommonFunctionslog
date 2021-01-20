@@ -1,0 +1,1423 @@
+
+----- Main()
+		 Input File Name : ../brace_remover/Testing/CommonFunctions
+		VertexHash Contents :	{0: 9, 1: 9, 14: 9, 19: 9, 20: 9, 21: 2, 24: 9, 25: 2, 27: 1, 28: 9, 29: 1, 33: 1, 36: 2, 39: 2, 41: 4, 42: 9, 45: 9, 46: 2, 48: 4, 50: 9, 51: 2, 54: 9, 55: 2, 57: 9, 58: 2, 60: 4, 63: 9, 64: 2, 66: 1, 70: 1, 73: 2, 77: 9, 78: 2, 80: 4, 82: 1, 86: 1, 89: 2, 94: 9, 95: 2, 97: 9, 98: 2, 100: 9, 105: 2, 109: 2, 110: 9, 111: 1, 112: 1, 115: 1, 118: 2, 125: 4, 127: 9, 128: 2, 129: 9, 133: 9, 138: 2, 139: 9, 143: 4, 146: 9, 151: 9, 152: 1, 153: 9, 154: 1, 158: 1, 161: 2, 165: 1, 169: 1, 172: 2, 176: 1, 180: 1, 183: 2, 189: 9, 194: 2, 198: 2, 199: 9, 200: 1, 201: 1, 204: 1, 207: 2, 214: 4, 218: 9, 219: 9, 220: 9, 221: 1, 223: 2, 225: 4, 231: 2, 234: 1, 235: 9, 238: 4, 244: 1, 246: 4, 248: 9}
+
+-----Precomputations()--------
+	 Inside AnalyseCtrlBlocks()----
+0 : -1,
+1 : -1,
+2 : -1,
+3 : -1,
+4 : -1,
+5 : -1,
+6 : -1,
+7 : -1,
+8 : -1,
+9 : -1,
+10 : -1,
+11 : -1,
+12 : -1,
+13 : -1,
+14 : -1,15 : -1,
+16 : -1,
+17 : -1,
+18 : -1,
+19 : -1,
+20 : -1,
+21 : -1,
+22 : 21,
+23 : -1,
+24 : -1,
+25 : -1,
+26 : 25,
+27 : -1,
+28 : 27,
+29 : 27,30 : 29,
+31 : 29,
+32 : 29,
+33 : 29,
+34 : 33,
+35 : 33,
+36 : 33,
+37 : 36,
+38 : 36,
+39 : 36,
+40 : 39,
+41 : 39,
+42 : 41,
+43 : 36,
+44 : 36,45 : 36,
+46 : 36,
+47 : 46,
+48 : 46,
+49 : 48,
+50 : 36,
+51 : 36,
+52 : 51,
+53 : 36,
+54 : 36,
+55 : 36,
+56 : 55,
+57 : 36,
+58 : 36,
+59 : 58,60 : 58,
+61 : 60,
+62 : 36,
+63 : 36,
+64 : 36,
+65 : 64,
+66 : 36,
+67 : 66,
+68 : 66,
+69 : 66,
+70 : 66,
+71 : 70,
+72 : 70,
+73 : 70,
+74 : 73,75 : 73,
+76 : 73,
+77 : 36,
+78 : 36,
+79 : 78,
+80 : 78,
+81 : 80,
+82 : 36,
+83 : 82,
+84 : 82,
+85 : 82,
+86 : 82,
+87 : 86,
+88 : 86,
+89 : 86,90 : 89,
+91 : 89,
+92 : 89,
+93 : 89,
+94 : 82,
+95 : 82,
+96 : 95,
+97 : 82,
+98 : 82,
+99 : 98,
+100 : 98,
+101 : 98,
+102 : 98,
+103 : 98,
+104 : 98,105 : 98,
+106 : 105,
+107 : 105,
+108 : 105,
+109 : 105,
+110 : 109,
+111 : 109,
+112 : 111,
+113 : 112,
+114 : 112,
+115 : 112,
+116 : 115,
+117 : 115,
+118 : 115,
+119 : 118,120 : 118,
+121 : 118,
+122 : 118,
+123 : 111,
+124 : 109,
+125 : 109,
+126 : 125,
+127 : 36,
+128 : 36,
+129 : 128,
+130 : 128,
+131 : 128,
+132 : 128,
+133 : 128,
+134 : 128,135 : 128,
+136 : 128,
+137 : 128,
+138 : 128,
+139 : 138,
+140 : 138,
+141 : 138,
+142 : 138,
+143 : 138,
+144 : 143,
+145 : -1,
+146 : -1,
+147 : -1,
+148 : -1,
+149 : -1,150 : -1,
+151 : -1,
+152 : -1,
+153 : 152,
+154 : 152,
+155 : 154,
+156 : 154,
+157 : 154,
+158 : 154,
+159 : 158,
+160 : 158,
+161 : 158,
+162 : 161,
+163 : 161,
+164 : 161,165 : 161,
+166 : 165,
+167 : 165,
+168 : 165,
+169 : 165,
+170 : 169,
+171 : 169,
+172 : 169,
+173 : 172,
+174 : 172,
+175 : 172,
+176 : 161,
+177 : 176,
+178 : 176,
+179 : 176,180 : 176,
+181 : 180,
+182 : 180,
+183 : 180,
+184 : 183,
+185 : 183,
+186 : 183,
+187 : 183,
+188 : 176,
+189 : 176,
+190 : 176,
+191 : 176,
+192 : 176,
+193 : 176,
+194 : 176,195 : 194,
+196 : 194,
+197 : 194,
+198 : 194,
+199 : 198,
+200 : 198,
+201 : 200,
+202 : 201,
+203 : 201,
+204 : 201,
+205 : 204,
+206 : 204,
+207 : 204,
+208 : 207,
+209 : 207,210 : 207,
+211 : 207,
+212 : 200,
+213 : 198,
+214 : 198,
+215 : 214,
+216 : -1,
+217 : -1,
+218 : -1,
+219 : -1,
+220 : -1,
+221 : -1,
+222 : 221,
+223 : 221,
+224 : 223,225 : 223,
+226 : 225,
+227 : 221,
+228 : -1,
+229 : -1,
+230 : -1,
+231 : -1,
+232 : 231,
+233 : -1,
+234 : -1,
+235 : 234,
+236 : 234,
+237 : 234,
+238 : 234,
+239 : 238,240 : 238,
+241 : -1,
+242 : -1,
+243 : -1,
+244 : -1,
+245 : 244,
+246 : 244,
+247 : 246,
+248 : 246,
+249 : -1,{0: (0.0, 1.0), 1: (0.0, 1.0), 2: (1.0, 1.0), 3: (2.0, 4.0), 4: (1.0, 2.0), 5: (1.0, 2.0), 6: (1.0, 2.0), 7: (1.0, 2.0), 8: (4.0, 1.0), 9: (1.0, 0.0), 10: (1.0, 0.0), 11: (1.0, 0.0), 12: (1.0, 0.0), 13: (1.0, 0.0), 14: (0.0, 5.0), 19: (0.0, 1.0), 20: (0.0, 1.0), 21: (1.0, 1.0), 22: (2.0, 1.0), 23: (2.0, 1.0), 24: (0.0, 1.0), 25: (1.0, 1.0), 26: (2.0, 1.0), 27: (0.0, 2.0), 28: (1.0, 3.0), 29: (1.0, 4.0), 30: (2.0, 3.0), 31: (3.0, 0.0), 32: (3.0, 0.0), 33: (1.0, 3.0), 34: (2.0, 9.0), 35: (2.0, 1.0), 36: (2.0, 23.0), 37: (2.0, 3.0), 38: (2.0, 1.0), 39: (2.0, 2.0), 40: (1.0, 0.0), 41: (1.0, 1.0), 42: (1.0, 1.0), 43: (2.0, 5.0), 44: (2.0, 1.0), 45: (1.0, 1.0), 46: (2.0, 2.0), 47: (2.0, 1.0), 48: (1.0, 1.0), 49: (1.0, 0.0), 50: (1.0, 1.0), 51: (2.0, 1.0), 52: (2.0, 1.0), 53: (3.0, 1.0), 54: (1.0, 1.0), 55: (2.0, 1.0), 56: (2.0, 1.0), 57: (1.0, 1.0), 58: (2.0, 2.0), 59: (2.0, 1.0), 60: (1.0, 1.0), 61: (2.0, 1.0), 62: (3.0, 1.0), 63: (1.0, 1.0), 64: (2.0, 1.0), 65: (2.0, 1.0), 66: (1.0, 4.0), 67: (2.0, 3.0), 68: (3.0, 0.0), 69: (3.0, 0.0), 70: (1.0, 3.0), 71: (2.0, 2.0), 72: (2.0, 1.0), 73: (2.0, 3.0), 74: (2.0, 1.0), 75: (2.0, 1.0), 76: (4.0, 1.0), 77: (1.0, 1.0), 78: (2.0, 2.0), 79: (2.0, 1.0), 80: (1.0, 1.0), 81: (2.0, 1.0), 82: (1.0, 8.0), 83: (2.0, 4.0), 84: (3.0, 0.0), 85: (3.0, 0.0), 86: (1.0, 3.0), 87: (2.0, 3.0), 88: (2.0, 1.0), 89: (2.0, 4.0), 90: (2.0, 1.0), 91: (2.0, 1.0), 92: (2.0, 1.0), 93: (5.0, 1.0), 94: (1.0, 1.0), 95: (2.0, 1.0), 96: (2.0, 1.0), 97: (1.0, 1.0), 98: (2.0, 7.0), 99: (1.0, 0.0), 100: (1.0, 1.0), 101: (2.0, 1.0), 102: (2.0, 1.0), 103: (2.0, 1.0), 104: (2.0, 1.0), 105: (4.0, 4.0), 106: (2.0, 1.0), 107: (3.0, 2.0), 108: (2.0, 1.0), 109: (2.0, 4.0), 110: (1.0, 3.0), 111: (2.0, 2.0), 112: (1.0, 3.0), 113: (2.0, 5.0), 114: (2.0, 1.0), 115: (2.0, 3.0), 116: (2.0, 1.0), 117: (4.0, 1.0), 118: (2.0, 4.0), 119: (2.0, 0.0), 120: (2.0, 1.0), 121: (2.0, 1.0), 122: (5.0, 1.0), 123: (2.0, 0.0), 124: (2.0, 1.0), 125: (1.0, 1.0), 126: (2.0, 1.0), 127: (1.0, 1.0), 128: (2.0, 10.0), 129: (1.0, 5.0), 130: (2.0, 0.0), 131: (3.0, 1.0), 132: (3.0, 2.0), 133: (1.0, 1.0), 134: (2.0, 1.0), 135: (3.0, 1.0), 136: (3.0, 2.0), 137: (3.0, 1.0), 138: (2.0, 5.0), 139: (1.0, 1.0), 140: (4.0, 1.0), 141: (3.0, 1.0), 142: (3.0, 1.0), 143: (1.0, 1.0), 144: (3.0, 1.0), 145: (1.0, 0.0), 146: (0.0, 3.0), 151: (0.0, 1.0), 152: (0.0, 2.0), 153: (1.0, 3.0), 154: (1.0, 4.0), 155: (2.0, 3.0), 156: (2.0, 0.0), 157: (3.0, 0.0), 158: (1.0, 3.0), 159: (2.0, 7.0), 160: (2.0, 1.0), 161: (2.0, 5.0), 162: (2.0, 5.0), 163: (2.0, 1.0), 164: (3.0, 1.0), 165: (1.0, 4.0), 166: (2.0, 3.0), 167: (3.0, 0.0), 168: (3.0, 0.0), 169: (1.0, 3.0), 170: (2.0, 2.0), 171: (2.0, 1.0), 172: (2.0, 3.0), 173: (2.0, 1.0), 174: (2.0, 1.0), 175: (4.0, 1.0), 176: (1.0, 11.0), 177: (2.0, 4.0), 178: (3.0, 0.0), 179: (3.0, 0.0), 180: (1.0, 3.0), 181: (2.0, 3.0), 182: (2.0, 1.0), 183: (2.0, 4.0), 184: (2.0, 1.0), 185: (2.0, 1.0), 186: (2.0, 1.0), 187: (5.0, 1.0), 188: (1.0, 0.0), 189: (1.0, 1.0), 190: (2.0, 1.0), 191: (2.0, 1.0), 192: (2.0, 1.0), 193: (2.0, 1.0), 194: (4.0, 4.0), 195: (2.0, 1.0), 196: (3.0, 2.0), 197: (2.0, 1.0), 198: (2.0, 4.0), 199: (1.0, 3.0), 200: (2.0, 2.0), 201: (1.0, 3.0), 202: (2.0, 5.0), 203: (2.0, 1.0), 204: (2.0, 3.0), 205: (2.0, 1.0), 206: (4.0, 1.0), 207: (2.0, 4.0), 208: (2.0, 0.0), 209: (2.0, 1.0), 210: (2.0, 1.0), 211: (5.0, 1.0), 212: (2.0, 0.0), 213: (2.0, 1.0), 214: (1.0, 1.0), 215: (2.0, 1.0), 216: (1.0, 0.0), 218: (0.0, 3.0), 219: (0.0, 3.0), 220: (0.0, 1.0), 221: (2.0, 3.0), 222: (2.0, 3.0), 223: (2.0, 2.0), 224: (3.0, 0.0), 225: (1.0, 1.0), 226: (3.0, 0.0), 227: (2.0, 0.0), 228: (1.0, 1.0), 229: (1.0, 0.0), 231: (0.0, 1.0), 232: (1.0, 0.0), 234: (0.0, 4.0), 235: (1.0, 1.0), 236: (2.0, 2.0), 237: (2.0, 0.0), 238: (1.0, 2.0), 239: (1.0, 0.0), 240: (2.0, 1.0), 241: (1.0, 0.0), 244: (0.0, 2.0), 245: (1.0, 0.0), 246: (1.0, 2.0), 247: (1.0, 0.0), 248: (1.0, 1.0), 249: (1.0, 0.0)}
+
+
+-------------------------------NCEC----------------------------------------------
+
+	Target : [244] 
+Metric.py : All nodes in block at 244 are [248]
+Metric.py : NonData supplier in block at 244 are set([248])
+
+		 Block : 244Producer :[248] <[248]>
+
+		 Block :244Affinity :1.0
+
+		 Block :244Affinity :1.0 0.41
+
+	244 Disqualified for extraction block :
+Edge <244,245> Contracted, dom : 244caller :contractCtrlBlock
+Edge <244,246> Contracted, dom : 244caller :contractCtrlBlock
+Edge <244,247> Contracted, dom : 244caller :contractCtrlBlock
+Edge <244,248> Contracted, dom : 244caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 244are [(244, 245), (244, 246), (244, 247), (244, 248)]
+	 Block at 244 is outer and is contracted
+	Target : [234] 
+Metric.py : All nodes in block at 234 are [240, 235, 236]
+Metric.py : NonData supplier in block at 234 are set([240])
+
+		 Block : 234Producer :[240] <[240]>
+
+		 Block :234Affinity :0.333333333333
+
+		 Block :234Affinity :0.333333333333
+	234 qualifies for extraction
+Edge <234,235> Contracted, dom : 234caller :contractCtrlBlock
+Edge <234,236> Contracted, dom : 234caller :contractCtrlBlock
+Edge <234,237> Contracted, dom : 234caller :contractCtrlBlock
+Edge <234,238> Contracted, dom : 234caller :contractCtrlBlock
+Edge <234,239> Contracted, dom : 234caller :contractCtrlBlock
+Edge <234,240> Contracted, dom : 234caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 234are [(234, 235), (234, 236), (234, 237), (234, 238), (234, 239), (234, 240)]
+---After contracting control block at 234
+	No Exclusive Source at 234
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 234 & data predecessors are [] & <lbound = 0ubound = 249 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =234 & data successors are [241] & <lbound = 0ubound = 249 >
+Edge <234,241> Contracted, dom : 234caller :mergeChain
+Vertices Merged to the  target : 234are : 
+[ 241  ]
+No LinkChain Found
+
+Consumer : Sink chains are :{241: ([], []), -1: [241]}
+
+target: 234 Inspecting parent -1
+	Parents extracted with target :234 are <	 SegID of Extracted block is  234
+	Target : [231] 
+Metric.py : All nodes in block at 231 are []
+Metric.py : NonData supplier in block at 231 are set([])
+
+		 Block : 231Producer :[] <[]>
+
+		 Block :231Affinity :-1
+
+	231 Disqualified for extraction block :
+Edge <231,232> Contracted, dom : 231caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 231are [(231, 232)]
+	 Block at 231 is outer and is contracted
+	Target : [223] 
+Metric.py : All nodes in block at 223 are []
+Metric.py : NonData supplier in block at 223 are set([])
+
+		 Block : 223Producer :[] <[]>
+
+		 Block :223Affinity :-1
+
+	223 Disqualified for extraction block :
+	Target : [221] 
+Metric.py : All nodes in block at 221 are [219, 220, 222]
+Metric.py : NonData supplier in block at 221 are set([219, 220, 222])
+
+		 Block : 221Producer :[] <[]>
+
+		 Block :221Affinity :-1
+
+	221 Disqualified for extraction block :
+Edge <221,222> Contracted, dom : 221caller :contractCtrlBlock
+Edge <221,223> Contracted, dom : 221caller :contractCtrlBlock
+Edge <221,224> Contracted, dom : 221caller :contractCtrlBlock
+Edge <221,225> Contracted, dom : 221caller :contractCtrlBlock
+Edge <221,226> Contracted, dom : 221caller :contractCtrlBlock
+Edge <221,227> Contracted, dom : 221caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 221are [(221, 222), (221, 223), (221, 224), (221, 225), (221, 226), (221, 227)]
+	 Block at 221 is outer and is contracted
+	Target : [207] 
+Metric.py : All nodes in block at 207 are [209, 210, 211]
+Metric.py : NonData supplier in block at 207 are set([211])
+
+		 Block : 207Producer :[211] <[211]>
+
+		 Block :207Affinity :0.333333333333
+
+		 Block :207Affinity :0.333333333333
+	207 qualifies for extraction
+Edge <207,208> Contracted, dom : 207caller :contractCtrlBlock
+Edge <207,209> Contracted, dom : 207caller :contractCtrlBlock
+Edge <207,210> Contracted, dom : 207caller :contractCtrlBlock
+Edge <207,211> Contracted, dom : 207caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 207are [(207, 208), (207, 209), (207, 210), (207, 211)]
+---After contracting control block at 207
+	No Exclusive Source at 207
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 207 & data predecessors are [162, 197, 202, 206] & <lbound = 205ubound = 211 >
+tail :206 nonsource : [196, 205]successors [207]
+Edge <206,207> Contracted, dom : 207caller :mergeChain
+Vertices Merged to the  target : 207are : 
+[ 206  ]Producer SDDC: Link chain at 207merged to it; chain :{-1: [206], -2: 1, 206: ([], [])}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =207 & data successors are [213] & <lbound = 205ubound = 211 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 207 Inspecting parent 204
+All data nodes in parent : [209, 210, 211, 205, 206]
+All distinct edges in parent : [205]
+All supplier vertices from parent to 207[205]
+All consumers vertices in parent from 207[]
+All Dependency from inner to parent block is  [205]
+getParAffinity(): target 207Parent 204DistDEdge 1
+Edge <204,205> Contracted, dom : 204caller :contractCtrlBlock
+Edge <204,207> Contracted, dom : 204caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 204are [(204, 205), (204, 207)]
+---After contracting control block at 204
+	No Exclusive Source at 204
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 204 & data predecessors are [162, 196, 197, 199, 202, 203] & <lbound = 202ubound = 211 >
+tail :203 nonsource : [202]successors [204]
+Edge <203,204> Contracted, dom : 204caller :mergeChain
+Vertices Merged to the  target : 204are : 
+[ 203  ]Producer SDDC: Link chain at 204merged to it; chain :{203: ([], []), -1: [203], -2: 1}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =204 & data successors are [213] & <lbound = 202ubound = 211 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 207 Inspecting parent 201Sid 204
+All data nodes in parent : [202, 203, 205, 206, 209, 210, 211]
+All distinct edges in parent : [202]
+All supplier vertices from parent to 204[202]
+All consumers vertices in parent from 204[]
+All Dependency from inner to parent block is  [202]
+getParAffinity(): target 207Parent 201DistDEdge 1
+Edge <201,202> Contracted, dom : 201caller :contractCtrlBlock
+Edge <201,204> Contracted, dom : 201caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 201are [(201, 202), (201, 204)]
+---After contracting control block at 201
+	No Exclusive Source at 201
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 201 & data predecessors are [162, 177, 196, 197, 199] & <lbound = 201ubound = 212 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =201 & data successors are [213] & <lbound = 201ubound = 212 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 207 Inspecting parent 200Sid 201
+All data nodes in parent : [202, 203, 205, 206, 209, 210, 211]
+All distinct edges in parent : []
+All supplier vertices from parent to 201[]
+All consumers vertices in parent from 201[]
+All Dependency from inner to parent block is  []
+getParAffinity(): target 207Parent 200DistDEdge 0
+Edge <200,201> Contracted, dom : 200caller :contractCtrlBlock
+Edge <200,212> Contracted, dom : 200caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 200are [(200, 201), (200, 212)]
+---After contracting control block at 200
+Edge <199,200> Contracted, dom : 200caller :selectiveESC
+	All Exclusive source at 200 are  199
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 200 & data predecessors are [162, 177, 196, 197] & <lbound = 199ubound = 215 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =200 & data successors are [213] & <lbound = 199ubound = 215 >
+Edge <200,213> Contracted, dom : 200caller :mergeChain
+Vertices Merged to the  target : 200are : 
+[ 213  ]
+No LinkChain Found
+
+Consumer : Sink chains are :{213: ([], []), -1: [213]}
+
+target: 207 Inspecting parent 198Sid 200
+All data nodes in parent : [199, 202, 203, 205, 206, 209, 210, 211, 213, 215]
+All distinct edges in parent : [215]
+All supplier vertices from parent to 200[]
+All consumers vertices in parent from 200[215]
+All Dependency from inner to parent block is  [215]
+getParAffinity(): target 207Parent 198DistDEdge 1
+Edge <198,200> Contracted, dom : 198caller :contractCtrlBlock
+Edge <198,214> Contracted, dom : 198caller :contractCtrlBlock
+Edge <198,215> Contracted, dom : 198caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 198are [(198, 200), (198, 214), (198, 215)]
+---After contracting control block at 198
+	No Exclusive Source at 198
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 198 & data predecessors are [162, 177, 196, 197] & <lbound = 195ubound = 215 >
+tail :196 nonsource : [195]successors [198]
+tail 195 nonsource : [159]
+tail :197 nonsource : [187]successors [198]
+Edge <197,198> Contracted, dom : 198caller :mergeChain
+Vertices Merged to the  target : 198are : 
+[ 197  ]Producer SDDC: Link chain at 198merged to it; chain :{195: ([], []), 196: ([], []), -1: [196, 195], -2: 1}
+Producer: Link chain is being merged{195: ([], []), 196: ([], []), -1: [196, 195], -2: 1}Edge <196,198> Contracted, dom : 198caller :mergeChain
+Edge <195,198> Contracted, dom : 198caller :mergeChain
+Vertices Merged to the  target : 198are : 
+[ 196 195  ]
+Consumer SDDC : Target =198 & data successors are [216] & <lbound = 195ubound = 215 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 207 Inspecting parent 194Sid 198
+All data nodes in parent : [195, 196, 197, 199, 202, 203, 205, 206, 209, 210, 211, 213, 215]
+All distinct edges in parent : []
+All supplier vertices from parent to 198[]
+All consumers vertices in parent from 198[]
+All Dependency from inner to parent block is  []
+getParAffinity(): target 207Parent 194DistDEdge 0
+Edge <194,198> Contracted, dom : 194caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 194are [(194, 198)]
+---After contracting control block at 194
+Edge <189,194> Contracted, dom : 194caller :selectiveESC
+	All Exclusive source at 194 are  189
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 194 & data predecessors are [159, 162, 177, 187, 191, 192, 193] & <lbound = 177ubound = 215 >
+tail :191 nonsource : [190]successors [194]
+tail 190 nonsource : [159]
+tail :192 nonsource : [159]successors [194]
+Edge <192,194> Contracted, dom : 194caller :mergeChain
+Vertices Merged to the  target : 194are : 
+[ 192  ]Producer SDDC: Link chain at 194merged to it; chain :{-1: [191, 190], -2: 1, 190: ([], []), 191: ([], [])}tail :193 nonsource : [159]successors [194]
+Edge <193,194> Contracted, dom : 194caller :mergeChain
+Vertices Merged to the  target : 194are : 
+[ 193  ]Producer SDDC: Link chain at 194merged to it; chain :{-1: [191, 190], -2: 1, 190: ([], []), 191: ([], [])}
+Producer: Link chain is being merged{-1: [191, 190], -2: 1, 190: ([], []), 191: ([], [])}Edge <191,194> Contracted, dom : 194caller :mergeChain
+Edge <190,194> Contracted, dom : 194caller :mergeChain
+Vertices Merged to the  target : 194are : 
+[ 191 190  ]
+Consumer SDDC : Target =194 & data successors are [216] & <lbound = 177ubound = 215 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 207 Inspecting parent 176Sid 194
+All data nodes in parent : [177, 181, 182, 184, 185, 186, 187, 189, 190, 191, 192, 193, 195, 196, 197, 199, 202, 203, 205, 206, 209, 210, 211, 213, 215]
+All distinct edges in parent : [177, 181, 182, 184, 185, 186, 187]
+All supplier vertices from parent to 194[177, 187]
+All consumers vertices in parent from 194[]
+All Dependency from inner to parent block is  [177, 187]
+getParAffinity(): target 207Parent 176DistDEdge 7
+Affinity of Parent : 176is 0.714285714286
+	Parents extracted with target :207 are < 204 201 200 198 194	 SegID of Extracted block is  194
+	Target : [183] 
+Metric.py : All nodes in block at 183 are [184, 185, 186, 187]
+Metric.py : NonData supplier in block at 183 are set([187])
+
+		 Block : 183Producer :[187] <[187]>
+
+		 Block :183Affinity :0.25
+
+		 Block :183Affinity :0.25
+	183 qualifies for extraction
+Edge <183,184> Contracted, dom : 183caller :contractCtrlBlock
+Edge <183,185> Contracted, dom : 183caller :contractCtrlBlock
+Edge <183,186> Contracted, dom : 183caller :contractCtrlBlock
+Edge <183,187> Contracted, dom : 183caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 183are [(183, 184), (183, 185), (183, 186), (183, 187)]
+---After contracting control block at 183
+	No Exclusive Source at 183
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 183 & data predecessors are [162, 175, 181, 182] & <lbound = 181ubound = 187 >
+tail :182 nonsource : [181]successors [183]
+Edge <182,183> Contracted, dom : 183caller :mergeChain
+Vertices Merged to the  target : 183are : 
+[ 182  ]Producer SDDC: Link chain at 183merged to it; chain :{-1: [182], -2: 1, 182: ([], [])}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =183 & data successors are [194] & <lbound = 181ubound = 187 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 183 Inspecting parent 180
+All data nodes in parent : [181, 182, 184, 185, 186, 187]
+All distinct edges in parent : [181]
+All supplier vertices from parent to 183[181]
+All consumers vertices in parent from 183[]
+All Dependency from inner to parent block is  [181]
+getParAffinity(): target 183Parent 180DistDEdge 1
+Edge <180,181> Contracted, dom : 180caller :contractCtrlBlock
+Edge <180,183> Contracted, dom : 180caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 180are [(180, 181), (180, 183)]
+---After contracting control block at 180
+	No Exclusive Source at 180
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 180 & data predecessors are [162, 175, 177] & <lbound = 177ubound = 215 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =180 & data successors are [194] & <lbound = 177ubound = 215 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 183 Inspecting parent 176Sid 180
+	Parents extracted with target :183 are < 180	 SegID of Extracted block is  180
+	Target : [176] 
+Metric.py : All nodes in block at 176 are [177]
+Metric.py : NonData supplier in block at 176 are set([177])
+
+		 Block : 176Producer :[] <[215]>
+
+		 Block :176Affinity :-1
+
+	176 Disqualified for extraction block :
+	Target : [172] 
+Metric.py : All nodes in block at 172 are [173, 174, 175]
+Metric.py : NonData supplier in block at 172 are set([175])
+
+		 Block : 172Producer :[175] <[175]>
+
+		 Block :172Affinity :0.333333333333
+
+		 Block :172Affinity :0.333333333333
+	172 qualifies for extraction
+Edge <172,173> Contracted, dom : 172caller :contractCtrlBlock
+Edge <172,174> Contracted, dom : 172caller :contractCtrlBlock
+Edge <172,175> Contracted, dom : 172caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 172are [(172, 173), (172, 174), (172, 175)]
+---After contracting control block at 172
+	No Exclusive Source at 172
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 172 & data predecessors are [162, 164, 170, 171] & <lbound = 170ubound = 175 >
+tail :171 nonsource : [170]successors [172]
+Edge <171,172> Contracted, dom : 172caller :mergeChain
+Vertices Merged to the  target : 172are : 
+[ 171  ]Producer SDDC: Link chain at 172merged to it; chain :{171: ([], []), -1: [171], -2: 1}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =172 & data successors are [180] & <lbound = 170ubound = 175 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 172 Inspecting parent 169
+All data nodes in parent : [170, 171, 173, 174, 175]
+All distinct edges in parent : [170]
+All supplier vertices from parent to 172[170]
+All consumers vertices in parent from 172[]
+All Dependency from inner to parent block is  [170]
+getParAffinity(): target 172Parent 169DistDEdge 1
+Edge <169,170> Contracted, dom : 169caller :contractCtrlBlock
+Edge <169,172> Contracted, dom : 169caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 169are [(169, 170), (169, 172)]
+---After contracting control block at 169
+	No Exclusive Source at 169
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 169 & data predecessors are [162, 164, 166] & <lbound = 166ubound = 175 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =169 & data successors are [180] & <lbound = 166ubound = 175 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 172 Inspecting parent 165Sid 169
+All data nodes in parent : [166, 170, 171, 173, 174, 175]
+All distinct edges in parent : [166]
+All supplier vertices from parent to 169[166]
+All consumers vertices in parent from 169[]
+All Dependency from inner to parent block is  [166]
+getParAffinity(): target 172Parent 165DistDEdge 1
+Edge <165,166> Contracted, dom : 165caller :contractCtrlBlock
+Edge <165,167> Contracted, dom : 165caller :contractCtrlBlock
+Edge <165,168> Contracted, dom : 165caller :contractCtrlBlock
+Edge <165,169> Contracted, dom : 165caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 165are [(165, 166), (165, 167), (165, 168), (165, 169)]
+---After contracting control block at 165
+	No Exclusive Source at 165
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 165 & data predecessors are [146, 153, 162, 164] & <lbound = 162ubound = 215 >
+tail :164 nonsource : [163]successors [165]
+tail 163 nonsource : [159]
+
+Producer: Link chain is being merged{163: ([], []), 164: ([], []), -1: [164, 163], -2: 1}Edge <164,165> Contracted, dom : 165caller :mergeChain
+Edge <163,165> Contracted, dom : 165caller :mergeChain
+Vertices Merged to the  target : 165are : 
+[ 164 163  ]
+Consumer SDDC : Target =165 & data successors are [180] & <lbound = 162ubound = 215 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 172 Inspecting parent 161Sid 165
+	Parents extracted with target :172 are < 169 165	 SegID of Extracted block is  165
+	Target : [161] 
+Metric.py : All nodes in block at 161 are [177, 162]
+Metric.py : NonData supplier in block at 161 are set([177, 162])
+
+		 Block : 161Producer :[] <[215]>
+
+		 Block :161Affinity :-1
+
+	161 Disqualified for extraction block :
+	Target : [158] 
+Metric.py : All nodes in block at 158 are [160, 177, 162, 159]
+Metric.py : NonData supplier in block at 158 are set([160, 177, 162, 159])
+
+		 Block : 158Producer :[] <[215]>
+
+		 Block :158Affinity :-1
+
+	158 Disqualified for extraction block :
+	Target : [154] 
+Metric.py : All nodes in block at 154 are [160, 162, 177, 153, 155, 159]
+Metric.py : NonData supplier in block at 154 are set([160, 162, 177, 153, 155, 159])
+
+		 Block : 154Producer :[] <[215]>
+
+		 Block :154Affinity :-1
+
+	154 Disqualified for extraction block :
+	Target : [152] 
+Metric.py : All nodes in block at 152 are [160, 162, 177, 146, 151, 153, 155, 159]
+Metric.py : NonData supplier in block at 152 are set([160, 162, 177, 146, 151, 153, 155, 159])
+
+		 Block : 152Producer :[] <[215]>
+
+		 Block :152Affinity :-1
+
+	152 Disqualified for extraction block :
+Edge <152,153> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,154> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,155> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,156> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,157> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,158> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,159> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,160> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,161> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,162> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,165> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,176> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,177> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,178> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,179> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,180> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,188> Contracted, dom : 152caller :contractCtrlBlock
+Edge <152,194> Contracted, dom : 152caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 152are [(152, 153), (152, 154), (152, 155), (152, 156), (152, 157), (152, 158), (152, 159), (152, 160), (152, 161), (152, 162), (152, 165), (152, 176), (152, 177), (152, 178), (152, 179), (152, 180), (152, 188), (152, 194)]
+	 Block at 152 is outer and is contracted
+	Target : [138] 
+Metric.py : All nodes in block at 138 are [144, 139, 140, 141, 142]
+Metric.py : NonData supplier in block at 138 are set([144])
+
+		 Block : 138Producer :[144] <[144]>
+
+		 Block :138Affinity :0.2
+
+		 Block :138Affinity :0.2
+	138 qualifies for extraction
+Edge <138,139> Contracted, dom : 138caller :contractCtrlBlock
+Edge <138,140> Contracted, dom : 138caller :contractCtrlBlock
+Edge <138,141> Contracted, dom : 138caller :contractCtrlBlock
+Edge <138,142> Contracted, dom : 138caller :contractCtrlBlock
+Edge <138,143> Contracted, dom : 138caller :contractCtrlBlock
+Edge <138,144> Contracted, dom : 138caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 138are [(138, 139), (138, 140), (138, 141), (138, 142), (138, 143), (138, 144)]
+---After contracting control block at 138
+	No Exclusive Source at 138
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 138 & data predecessors are [37, 126, 132, 136, 137] & <lbound = 129ubound = 144 >
+tail :137 nonsource : [132, 136]successors [138]
+Edge <137,138> Contracted, dom : 138caller :mergeChain
+Vertices Merged to the  target : 138are : 
+[ 137  ]Producer SDDC: Link chain at 138merged to it; chain :{137: ([], []), -1: [137], -2: 1}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =138 & data successors are [145] & <lbound = 129ubound = 144 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 138 Inspecting parent 128
+All data nodes in parent : [129, 131, 132, 133, 134, 135, 136, 137, 139, 140, 141, 142, 144]
+All distinct edges in parent : [129, 131, 132, 133, 134, 135, 136]
+All supplier vertices from parent to 138[136, 132]
+All consumers vertices in parent from 138[]
+All Dependency from inner to parent block is  [136, 132]
+getParAffinity(): target 138Parent 128DistDEdge 7
+Affinity of Parent : 128is 0.714285714286
+	Parents extracted with target :138 are <	 SegID of Extracted block is  138
+	Target : [128] 
+Metric.py : All nodes in block at 128 are [129, 131, 132, 133, 134, 135, 136, 127]
+Metric.py : NonData supplier in block at 128 are set([129, 131, 132, 133, 134, 135, 136, 127])
+
+		 Block : 128Producer :[] <[144]>
+
+		 Block :128Affinity :-1
+
+	128 Disqualified for extraction block :
+	Target : [118] 
+Metric.py : All nodes in block at 118 are [120, 121, 122]
+Metric.py : NonData supplier in block at 118 are set([122])
+
+		 Block : 118Producer :[122] <[122]>
+
+		 Block :118Affinity :0.333333333333
+
+		 Block :118Affinity :0.333333333333
+	118 qualifies for extraction
+Edge <118,119> Contracted, dom : 118caller :contractCtrlBlock
+Edge <118,120> Contracted, dom : 118caller :contractCtrlBlock
+Edge <118,121> Contracted, dom : 118caller :contractCtrlBlock
+Edge <118,122> Contracted, dom : 118caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 118are [(118, 119), (118, 120), (118, 121), (118, 122)]
+---After contracting control block at 118
+	No Exclusive Source at 118
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 118 & data predecessors are [43, 108, 113, 117] & <lbound = 116ubound = 122 >
+tail :117 nonsource : [107, 116]successors [118]
+Edge <117,118> Contracted, dom : 118caller :mergeChain
+Vertices Merged to the  target : 118are : 
+[ 117  ]Producer SDDC: Link chain at 118merged to it; chain :{-1: [117], 117: ([], []), -2: 1}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =118 & data successors are [124] & <lbound = 116ubound = 122 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 118 Inspecting parent 115
+All data nodes in parent : [120, 121, 122, 116, 117]
+All distinct edges in parent : [116]
+All supplier vertices from parent to 118[116]
+All consumers vertices in parent from 118[]
+All Dependency from inner to parent block is  [116]
+getParAffinity(): target 118Parent 115DistDEdge 1
+Edge <115,116> Contracted, dom : 115caller :contractCtrlBlock
+Edge <115,118> Contracted, dom : 115caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 115are [(115, 116), (115, 118)]
+---After contracting control block at 115
+	No Exclusive Source at 115
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 115 & data predecessors are [43, 107, 108, 110, 113, 114] & <lbound = 113ubound = 122 >
+tail :114 nonsource : [113]successors [115]
+Edge <114,115> Contracted, dom : 115caller :mergeChain
+Vertices Merged to the  target : 115are : 
+[ 114  ]Producer SDDC: Link chain at 115merged to it; chain :{114: ([], []), -1: [114], -2: 1}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =115 & data successors are [124] & <lbound = 113ubound = 122 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 118 Inspecting parent 112Sid 115
+All data nodes in parent : [113, 114, 116, 117, 120, 121, 122]
+All distinct edges in parent : [113]
+All supplier vertices from parent to 115[113]
+All consumers vertices in parent from 115[]
+All Dependency from inner to parent block is  [113]
+getParAffinity(): target 118Parent 112DistDEdge 1
+Edge <112,113> Contracted, dom : 112caller :contractCtrlBlock
+Edge <112,115> Contracted, dom : 112caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 112are [(112, 113), (112, 115)]
+---After contracting control block at 112
+	No Exclusive Source at 112
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 112 & data predecessors are [43, 83, 107, 108, 110] & <lbound = 112ubound = 123 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =112 & data successors are [124] & <lbound = 112ubound = 123 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 118 Inspecting parent 111Sid 112
+All data nodes in parent : [113, 114, 116, 117, 120, 121, 122]
+All distinct edges in parent : []
+All supplier vertices from parent to 112[]
+All consumers vertices in parent from 112[]
+All Dependency from inner to parent block is  []
+getParAffinity(): target 118Parent 111DistDEdge 0
+Edge <111,112> Contracted, dom : 111caller :contractCtrlBlock
+Edge <111,123> Contracted, dom : 111caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 111are [(111, 112), (111, 123)]
+---After contracting control block at 111
+Edge <110,111> Contracted, dom : 111caller :selectiveESC
+	All Exclusive source at 111 are  110
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 111 & data predecessors are [43, 83, 107, 108] & <lbound = 110ubound = 126 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =111 & data successors are [124] & <lbound = 110ubound = 126 >
+Edge <111,124> Contracted, dom : 111caller :mergeChain
+Vertices Merged to the  target : 111are : 
+[ 124  ]
+No LinkChain Found
+
+Consumer : Sink chains are :{124: ([], []), -1: [124]}
+
+target: 118 Inspecting parent 109Sid 111
+All data nodes in parent : [110, 113, 114, 116, 117, 120, 121, 122, 124, 126]
+All distinct edges in parent : [126]
+All supplier vertices from parent to 111[]
+All consumers vertices in parent from 111[126]
+All Dependency from inner to parent block is  [126]
+getParAffinity(): target 118Parent 109DistDEdge 1
+Edge <109,111> Contracted, dom : 109caller :contractCtrlBlock
+Edge <109,125> Contracted, dom : 109caller :contractCtrlBlock
+Edge <109,126> Contracted, dom : 109caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 109are [(109, 111), (109, 125), (109, 126)]
+---After contracting control block at 109
+	No Exclusive Source at 109
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 109 & data predecessors are [43, 83, 107, 108] & <lbound = 106ubound = 126 >
+tail :107 nonsource : [106]successors [109]
+tail 106 nonsource : [34]
+tail :108 nonsource : [96]successors [109]
+Edge <108,109> Contracted, dom : 109caller :mergeChain
+Vertices Merged to the  target : 109are : 
+[ 108  ]Producer SDDC: Link chain at 109merged to it; chain :{106: ([], []), 107: ([], []), -1: [107, 106], -2: 1}
+Producer: Link chain is being merged{106: ([], []), 107: ([], []), -1: [107, 106], -2: 1}Edge <107,109> Contracted, dom : 109caller :mergeChain
+Edge <106,109> Contracted, dom : 109caller :mergeChain
+Vertices Merged to the  target : 109are : 
+[ 107 106  ]
+Consumer SDDC : Target =109 & data successors are [138] & <lbound = 106ubound = 126 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 118 Inspecting parent 105Sid 109
+All data nodes in parent : [106, 107, 108, 110, 113, 114, 116, 117, 120, 121, 122, 124, 126]
+All distinct edges in parent : []
+All supplier vertices from parent to 109[]
+All consumers vertices in parent from 109[]
+All Dependency from inner to parent block is  []
+getParAffinity(): target 118Parent 105DistDEdge 0
+Edge <105,109> Contracted, dom : 105caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 105are [(105, 109)]
+---After contracting control block at 105
+Edge <100,105> Contracted, dom : 105caller :selectiveESC
+	All Exclusive source at 105 are  100
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 105 & data predecessors are [34, 43, 83, 96, 102, 103, 104] & <lbound = 99ubound = 126 >
+tail :102 nonsource : [101]successors [105]
+tail 101 nonsource : [34]
+tail :103 nonsource : [34]successors [105]
+Edge <103,105> Contracted, dom : 105caller :mergeChain
+Vertices Merged to the  target : 105are : 
+[ 103  ]Producer SDDC: Link chain at 105merged to it; chain :{-2: 1, -1: [102, 101], 101: ([], []), 102: ([], [])}tail :104 nonsource : [34]successors [105]
+Edge <104,105> Contracted, dom : 105caller :mergeChain
+Vertices Merged to the  target : 105are : 
+[ 104  ]Producer SDDC: Link chain at 105merged to it; chain :{-2: 1, -1: [102, 101], 101: ([], []), 102: ([], [])}
+Producer: Link chain is being merged{-2: 1, -1: [102, 101], 101: ([], []), 102: ([], [])}Edge <102,105> Contracted, dom : 105caller :mergeChain
+Edge <101,105> Contracted, dom : 105caller :mergeChain
+Vertices Merged to the  target : 105are : 
+[ 102 101  ]
+Consumer SDDC : Target =105 & data successors are [138] & <lbound = 99ubound = 126 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 118 Inspecting parent 98Sid 105
+All data nodes in parent : [100, 101, 102, 103, 104, 106, 107, 108, 110, 113, 114, 116, 117, 120, 121, 122, 124, 126]
+All distinct edges in parent : []
+All supplier vertices from parent to 105[]
+All consumers vertices in parent from 105[]
+All Dependency from inner to parent block is  []
+getParAffinity(): target 118Parent 98DistDEdge 0
+Edge <98,99> Contracted, dom : 98caller :contractCtrlBlock
+Edge <98,105> Contracted, dom : 98caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 98are [(98, 99), (98, 105)]
+---After contracting control block at 98
+Edge <97,98> Contracted, dom : 98caller :selectiveESC
+	All Exclusive source at 98 are  97
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 98 & data predecessors are [34, 43, 83, 96] & <lbound = 83ubound = 126 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =98 & data successors are [138] & <lbound = 83ubound = 126 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 118 Inspecting parent 82Sid 98
+All data nodes in parent : [83, 87, 88, 90, 91, 92, 93, 94, 96, 97, 100, 101, 102, 103, 104, 106, 107, 108, 110, 113, 114, 116, 117, 120, 121, 122, 124, 126]
+All distinct edges in parent : [83, 87, 88, 90, 91, 92, 93, 94, 96]
+All supplier vertices from parent to 98[96, 83]
+All consumers vertices in parent from 98[]
+All Dependency from inner to parent block is  [96, 83]
+getParAffinity(): target 118Parent 82DistDEdge 9
+Affinity of Parent : 82is 0.777777777778
+	Parents extracted with target :118 are < 115 112 111 109 105 98	 SegID of Extracted block is  98
+	Target : [95] 
+Metric.py : All nodes in block at 95 are [96, 94]
+Metric.py : NonData supplier in block at 95 are set([96, 94])
+
+		 Block : 95Producer :[96] <[96]>
+
+		 Block :95Affinity :0.5
+
+		 Block :95Affinity :0.5 0.41
+
+	95 Disqualified for extraction block :
+	Target : [89] 
+Metric.py : All nodes in block at 89 are [90, 91, 92, 93]
+Metric.py : NonData supplier in block at 89 are set([93])
+
+		 Block : 89Producer :[93] <[93]>
+
+		 Block :89Affinity :0.25
+
+		 Block :89Affinity :0.25
+	89 qualifies for extraction
+Edge <89,90> Contracted, dom : 89caller :contractCtrlBlock
+Edge <89,91> Contracted, dom : 89caller :contractCtrlBlock
+Edge <89,92> Contracted, dom : 89caller :contractCtrlBlock
+Edge <89,93> Contracted, dom : 89caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 89are [(89, 90), (89, 91), (89, 92), (89, 93)]
+---After contracting control block at 89
+	No Exclusive Source at 89
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 89 & data predecessors are [43, 81, 87, 88] & <lbound = 87ubound = 93 >
+tail :88 nonsource : [87]successors [89]
+Edge <88,89> Contracted, dom : 89caller :mergeChain
+Vertices Merged to the  target : 89are : 
+[ 88  ]Producer SDDC: Link chain at 89merged to it; chain :{88: ([], []), -1: [88], -2: 1}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =89 & data successors are [96] & <lbound = 87ubound = 93 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 89 Inspecting parent 86
+All data nodes in parent : [87, 88, 90, 91, 92, 93]
+All distinct edges in parent : [87]
+All supplier vertices from parent to 89[87]
+All consumers vertices in parent from 89[]
+All Dependency from inner to parent block is  [87]
+getParAffinity(): target 89Parent 86DistDEdge 1
+Edge <86,87> Contracted, dom : 86caller :contractCtrlBlock
+Edge <86,89> Contracted, dom : 86caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 86are [(86, 87), (86, 89)]
+---After contracting control block at 86
+	No Exclusive Source at 86
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 86 & data predecessors are [43, 81, 83] & <lbound = 83ubound = 126 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =86 & data successors are [96] & <lbound = 83ubound = 126 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 89 Inspecting parent 82Sid 86
+	Parents extracted with target :89 are < 86	 SegID of Extracted block is  86
+	Target : [82] 
+Metric.py : All nodes in block at 82 are [96, 83, 94]
+Metric.py : NonData supplier in block at 82 are set([96, 83, 94])
+
+		 Block : 82Producer :[] <[126]>
+
+		 Block :82Affinity :-1
+
+	82 Disqualified for extraction block :
+	Target : [78] 
+Metric.py : All nodes in block at 78 are [81, 77, 79]
+Metric.py : NonData supplier in block at 78 are set([81, 77])
+
+		 Block : 78Producer :[81] <[81]>
+
+		 Block :78Affinity :0.333333333333
+
+		 Block :78Affinity :0.333333333333
+	78 qualifies for extraction
+Edge <78,79> Contracted, dom : 78caller :contractCtrlBlock
+Edge <78,80> Contracted, dom : 78caller :contractCtrlBlock
+Edge <78,81> Contracted, dom : 78caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 78are [(78, 79), (78, 80), (78, 81)]
+---After contracting control block at 78
+Edge <77,78> Contracted, dom : 78caller :selectiveESC
+	All Exclusive source at 78 are  77
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 78 & data predecessors are [76] & <lbound = 37ubound = 144 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =78 & data successors are [86] & <lbound = 37ubound = 144 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 78 Inspecting parent 36
+	Parents extracted with target :78 are <	 SegID of Extracted block is  78
+	Target : [73] 
+Metric.py : All nodes in block at 73 are [74, 75, 76]
+Metric.py : NonData supplier in block at 73 are set([76])
+
+		 Block : 73Producer :[76] <[76]>
+
+		 Block :73Affinity :0.333333333333
+
+		 Block :73Affinity :0.333333333333
+	73 qualifies for extraction
+Edge <73,74> Contracted, dom : 73caller :contractCtrlBlock
+Edge <73,75> Contracted, dom : 73caller :contractCtrlBlock
+Edge <73,76> Contracted, dom : 73caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 73are [(73, 74), (73, 75), (73, 76)]
+---After contracting control block at 73
+	No Exclusive Source at 73
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 73 & data predecessors are [43, 65, 71, 72] & <lbound = 71ubound = 76 >
+tail :72 nonsource : [71]successors [73]
+Edge <72,73> Contracted, dom : 73caller :mergeChain
+Vertices Merged to the  target : 73are : 
+[ 72  ]Producer SDDC: Link chain at 73merged to it; chain :{72: ([], []), -1: [72], -2: 1}
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =73 & data successors are [78] & <lbound = 71ubound = 76 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 73 Inspecting parent 70
+All data nodes in parent : [72, 74, 75, 76, 71]
+All distinct edges in parent : [71]
+All supplier vertices from parent to 73[71]
+All consumers vertices in parent from 73[]
+All Dependency from inner to parent block is  [71]
+getParAffinity(): target 73Parent 70DistDEdge 1
+Edge <70,71> Contracted, dom : 70caller :contractCtrlBlock
+Edge <70,73> Contracted, dom : 70caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 70are [(70, 71), (70, 73)]
+---After contracting control block at 70
+	No Exclusive Source at 70
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 70 & data predecessors are [43, 65, 67] & <lbound = 67ubound = 76 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =70 & data successors are [78] & <lbound = 67ubound = 76 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 73 Inspecting parent 66Sid 70
+All data nodes in parent : [67, 71, 72, 74, 75, 76]
+All distinct edges in parent : [67]
+All supplier vertices from parent to 70[67]
+All consumers vertices in parent from 70[]
+All Dependency from inner to parent block is  [67]
+getParAffinity(): target 73Parent 66DistDEdge 1
+Edge <66,67> Contracted, dom : 66caller :contractCtrlBlock
+Edge <66,68> Contracted, dom : 66caller :contractCtrlBlock
+Edge <66,69> Contracted, dom : 66caller :contractCtrlBlock
+Edge <66,70> Contracted, dom : 66caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 66are [(66, 67), (66, 68), (66, 69), (66, 70)]
+---After contracting control block at 66
+	No Exclusive Source at 66
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 66 & data predecessors are [14, 28, 43, 65] & <lbound = 37ubound = 144 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =66 & data successors are [78] & <lbound = 37ubound = 144 >
+
+No LinkChain Found
+
+Consumer: No sink chains are Found
+target: 73 Inspecting parent 36Sid 66
+	Parents extracted with target :73 are < 70 66	 SegID of Extracted block is  66
+	Target : [64] 
+Metric.py : All nodes in block at 64 are [65, 63]
+Metric.py : NonData supplier in block at 64 are set([65, 63])
+
+		 Block : 64Producer :[65] <[65]>
+
+		 Block :64Affinity :0.5
+
+		 Block :64Affinity :0.5 0.41
+
+	64 Disqualified for extraction block :
+	Target : [58] 
+Metric.py : All nodes in block at 58 are [57, 59, 61]
+Metric.py : NonData supplier in block at 58 are set([57, 61])
+
+		 Block : 58Producer :[61] <[61]>
+
+		 Block :58Affinity :0.333333333333
+
+		 Block :58Affinity :0.333333333333
+	58 qualifies for extraction
+Edge <58,59> Contracted, dom : 58caller :contractCtrlBlock
+Edge <58,60> Contracted, dom : 58caller :contractCtrlBlock
+Edge <58,61> Contracted, dom : 58caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 58are [(58, 59), (58, 60), (58, 61)]
+---After contracting control block at 58
+Edge <57,58> Contracted, dom : 58caller :selectiveESC
+	All Exclusive source at 58 are  57
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 58 & data predecessors are [56] & <lbound = 37ubound = 144 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =58 & data successors are [62] & <lbound = 37ubound = 144 >
+
+vertex42is either present twice in chain OR is not in same control region with 62
+Edge <58,62> Contracted, dom : 58caller :mergeChain
+Vertices Merged to the  target : 58are : 
+[ 62  ]
+No LinkChain Found
+
+Consumer : Sink chains are :{-1: [62], 62: ([42], [])}
+
+target: 58 Inspecting parent 36
+	Parents extracted with target :58 are <	 SegID of Extracted block is  58
+	Target : [55] 
+Metric.py : All nodes in block at 55 are [56, 54]
+Metric.py : NonData supplier in block at 55 are set([56, 54])
+
+		 Block : 55Producer :[56] <[56]>
+
+		 Block :55Affinity :0.5
+
+		 Block :55Affinity :0.5 0.41
+
+	55 Disqualified for extraction block :
+	Target : [51] 
+Metric.py : All nodes in block at 51 are [50, 52]
+Metric.py : NonData supplier in block at 51 are set([50, 52])
+
+		 Block : 51Producer :[52] <[52]>
+
+		 Block :51Affinity :0.5
+
+		 Block :51Affinity :0.5 0.41
+
+	51 Disqualified for extraction block :
+	Target : [46] 
+Metric.py : All nodes in block at 46 are [45, 47]
+Metric.py : NonData supplier in block at 46 are set([45, 47])
+
+		 Block : 46Producer :[47] <[47]>
+
+		 Block :46Affinity :0.5
+
+		 Block :46Affinity :0.5 0.41
+
+	46 Disqualified for extraction block :
+	Target : [39] 
+Metric.py : All nodes in block at 39 are [42]
+Metric.py : NonData supplier in block at 39 are set([42])
+
+		 Block : 39Producer :[42] <[42]>
+
+		 Block :39Affinity :1.0
+
+		 Block :39Affinity :1.0 0.41
+
+	39 Disqualified for extraction block :
+	Target : [36] 
+Metric.py : All nodes in block at 36 are [129, 131, 132, 133, 134, 135, 136, 37, 38, 42, 43, 44, 45, 47, 50, 52, 53, 54, 56, 63, 65, 83, 94, 96, 127]
+Metric.py : NonData supplier in block at 36 are set([129, 131, 132, 133, 134, 135, 136, 37, 38, 42, 43, 44, 45, 47, 50, 52, 53, 54, 56, 63, 65, 83, 94, 96, 127])
+
+		 Block : 36Producer :[] <[144]>
+
+		 Block :36Affinity :-1
+
+	36 Disqualified for extraction block :
+	Target : [33] 
+Metric.py : All nodes in block at 33 are [129, 131, 132, 133, 134, 135, 136, 34, 35, 37, 38, 42, 43, 44, 45, 47, 50, 52, 53, 54, 56, 63, 65, 83, 94, 96, 127]
+Metric.py : NonData supplier in block at 33 are set([129, 131, 132, 133, 134, 135, 136, 34, 35, 37, 38, 42, 43, 44, 45, 47, 50, 52, 53, 54, 56, 63, 65, 83, 94, 96, 127])
+
+		 Block : 33Producer :[] <[144]>
+
+		 Block :33Affinity :-1
+
+	33 Disqualified for extraction block :
+	Target : [29] 
+Metric.py : All nodes in block at 29 are [129, 131, 132, 133, 134, 135, 136, 28, 30, 34, 35, 37, 38, 42, 43, 44, 45, 47, 50, 52, 53, 54, 56, 63, 65, 83, 94, 96, 127]
+Metric.py : NonData supplier in block at 29 are set([129, 131, 132, 133, 134, 135, 136, 28, 30, 34, 35, 37, 38, 42, 43, 44, 45, 47, 50, 52, 53, 54, 56, 63, 65, 83, 94, 96, 127])
+
+		 Block : 29Producer :[] <[144]>
+
+		 Block :29Affinity :-1
+
+	29 Disqualified for extraction block :
+	Target : [27] 
+Metric.py : All nodes in block at 27 are [129, 131, 132, 133, 134, 135, 136, 28, 30, 34, 35, 37, 38, 42, 43, 44, 45, 47, 50, 52, 53, 54, 56, 63, 65, 83, 94, 96, 127]
+Metric.py : NonData supplier in block at 27 are set([129, 131, 132, 133, 134, 135, 136, 28, 30, 34, 35, 37, 38, 42, 43, 44, 45, 47, 50, 52, 53, 54, 56, 63, 65, 83, 94, 96, 127])
+
+		 Block : 27Producer :[] <[144]>
+
+		 Block :27Affinity :-1
+
+	27 Disqualified for extraction block :
+Edge <27,28> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,29> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,30> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,31> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,32> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,33> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,34> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,35> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,36> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,37> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,38> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,39> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,40> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,41> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,42> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,43> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,44> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,45> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,46> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,47> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,48> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,49> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,50> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,51> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,52> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,53> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,54> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,55> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,56> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,58> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,63> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,64> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,65> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,66> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,78> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,82> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,83> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,84> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,85> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,86> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,94> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,95> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,96> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,98> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,127> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,128> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,129> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,130> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,131> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,132> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,133> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,134> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,135> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,136> Contracted, dom : 27caller :contractCtrlBlock
+Edge <27,138> Contracted, dom : 27caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 27are [(27, 28), (27, 29), (27, 30), (27, 31), (27, 32), (27, 33), (27, 34), (27, 35), (27, 36), (27, 37), (27, 38), (27, 39), (27, 40), (27, 41), (27, 42), (27, 43), (27, 44), (27, 45), (27, 46), (27, 47), (27, 48), (27, 49), (27, 50), (27, 51), (27, 52), (27, 53), (27, 54), (27, 55), (27, 56), (27, 58), (27, 63), (27, 64), (27, 65), (27, 66), (27, 78), (27, 82), (27, 83), (27, 84), (27, 85), (27, 86), (27, 94), (27, 95), (27, 96), (27, 98), (27, 127), (27, 128), (27, 129), (27, 130), (27, 131), (27, 132), (27, 133), (27, 134), (27, 135), (27, 136), (27, 138)]
+	 Block at 27 is outer and is contracted
+	Target : [25] 
+Metric.py : All nodes in block at 25 are [24, 26]
+Metric.py : NonData supplier in block at 25 are set([24, 26])
+
+		 Block : 25Producer :[26] <[26]>
+
+		 Block :25Affinity :0.5
+
+		 Block :25Affinity :0.5 0.41
+
+	25 Disqualified for extraction block :
+Edge <25,26> Contracted, dom : 25caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 25are [(25, 26)]
+	 Block at 25 is outer and is contracted
+	Target : [21] 
+Metric.py : All nodes in block at 21 are [19, 20, 22]
+Metric.py : NonData supplier in block at 21 are set([20, 22])
+
+		 Block : 21Producer :[22] <[22]>
+
+		 Block :21Affinity :0.333333333333
+
+		 Block :21Affinity :0.333333333333
+	21 qualifies for extraction
+Edge <21,22> Contracted, dom : 21caller :contractCtrlBlock
+Graph.ContractCtrlBlock : Edges in segment rooted at 21are [(21, 22)]
+---After contracting control block at 21
+Edge <19,21> Contracted, dom : 21caller :selectiveESC
+Edge <20,21> Contracted, dom : 21caller :selectiveESC
+	All Exclusive source at 21 are  19 20
+
+	In Selective SDDC called by contractBlock
+Producer SDDC : Target = 21 & data predecessors are [] & <lbound = 0ubound = 249 >
+
+Producer : No LinkChain is found
+
+Consumer SDDC : Target =21 & data successors are [23] & <lbound = 0ubound = 249 >
+A control block is encountered in consumer chain; Id = 25
+Edge <21,23> Contracted, dom : 21caller :mergeChain
+Vertices Merged to the  target : 21are : 
+[ 23  ]
+Consumer: Merged LinkChain{-2: 1, -1: [23], 23: ([], [])}
+Consumer: No sink chains are Found
+target: 21 Inspecting parent -1
+	Parents extracted with target :21 are <	 SegID of Extracted block is  21
+
+----------------------------------End of NCEC-------------------------------------------
+
+{0: (0.0, 1.0), 1: (0.0, 1.0), 2: (1.0, 1.0), 3: (2.0, 4.0), 4: (1.0, 2.0), 5: (1.0, 2.0), 6: (1.0, 2.0), 7: (1.0, 2.0), 8: (4.0, 1.0), 9: (1.0, 0.0), 10: (1.0, 0.0), 11: (1.0, 0.0), 12: (1.0, 0.0), 13: (1.0, 0.0), 14: (0.0, 2.0), 19: (0.0, 0.0), 20: (0.0, 0.0), 21: (1.0, 1.0), 22: (0.0, 0.0), 23: (0.0, 0.0), 24: (0.0, 1.0), 25: (2.0, 1.0), 26: (0.0, 0.0), 27: (2.0, 1.0), 28: (0.0, 0.0), 29: (0.0, 0.0), 30: (0.0, 0.0), 31: (0.0, 0.0), 32: (0.0, 0.0), 33: (0.0, 0.0), 34: (0.0, 0.0), 35: (0.0, 0.0), 36: (0.0, 0.0), 37: (0.0, 0.0), 38: (0.0, 0.0), 39: (0.0, 0.0), 40: (0.0, 0.0), 41: (0.0, 0.0), 42: (0.0, 0.0), 43: (0.0, 0.0), 44: (0.0, 0.0), 45: (0.0, 0.0), 46: (0.0, 0.0), 47: (0.0, 0.0), 48: (0.0, 0.0), 49: (0.0, 0.0), 50: (0.0, 0.0), 51: (0.0, 0.0), 52: (0.0, 0.0), 53: (0.0, 0.0), 54: (0.0, 0.0), 55: (0.0, 0.0), 56: (0.0, 0.0), 57: (0.0, 0.0), 58: (0.0, 0.0), 59: (0.0, 0.0), 60: (0.0, 0.0), 61: (0.0, 0.0), 62: (0.0, 0.0), 63: (0.0, 0.0), 64: (0.0, 0.0), 65: (0.0, 0.0), 66: (0.0, 0.0), 67: (0.0, 0.0), 68: (0.0, 0.0), 69: (0.0, 0.0), 70: (0.0, 0.0), 71: (0.0, 0.0), 72: (0.0, 0.0), 73: (0.0, 0.0), 74: (0.0, 0.0), 75: (0.0, 0.0), 76: (0.0, 0.0), 77: (0.0, 0.0), 78: (0.0, 0.0), 79: (0.0, 0.0), 80: (0.0, 0.0), 81: (0.0, 0.0), 82: (0.0, 0.0), 83: (0.0, 0.0), 84: (0.0, 0.0), 85: (0.0, 0.0), 86: (0.0, 0.0), 87: (0.0, 0.0), 88: (0.0, 0.0), 89: (0.0, 0.0), 90: (0.0, 0.0), 91: (0.0, 0.0), 92: (0.0, 0.0), 93: (0.0, 0.0), 94: (0.0, 0.0), 95: (0.0, 0.0), 96: (0.0, 0.0), 97: (0.0, 0.0), 98: (0.0, 0.0), 99: (0.0, 0.0), 100: (0.0, 0.0), 101: (0.0, 0.0), 102: (0.0, 0.0), 103: (0.0, 0.0), 104: (0.0, 0.0), 105: (0.0, 0.0), 106: (0.0, 0.0), 107: (0.0, 0.0), 108: (0.0, 0.0), 109: (0.0, 0.0), 110: (0.0, 0.0), 111: (0.0, 0.0), 112: (0.0, 0.0), 113: (0.0, 0.0), 114: (0.0, 0.0), 115: (0.0, 0.0), 116: (0.0, 0.0), 117: (0.0, 0.0), 118: (0.0, 0.0), 119: (0.0, 0.0), 120: (0.0, 0.0), 121: (0.0, 0.0), 122: (0.0, 0.0), 123: (0.0, 0.0), 124: (0.0, 0.0), 125: (0.0, 0.0), 126: (0.0, 0.0), 127: (0.0, 0.0), 128: (0.0, 0.0), 129: (0.0, 0.0), 130: (0.0, 0.0), 131: (0.0, 0.0), 132: (0.0, 0.0), 133: (0.0, 0.0), 134: (0.0, 0.0), 135: (0.0, 0.0), 136: (0.0, 0.0), 137: (0.0, 0.0), 138: (0.0, 0.0), 139: (0.0, 0.0), 140: (0.0, 0.0), 141: (0.0, 0.0), 142: (0.0, 0.0), 143: (0.0, 0.0), 144: (0.0, 0.0), 145: (1.0, 0.0), 146: (0.0, 1.0), 151: (0.0, 1.0), 152: (2.0, 1.0), 153: (0.0, 0.0), 154: (0.0, 0.0), 155: (0.0, 0.0), 156: (0.0, 0.0), 157: (0.0, 0.0), 158: (0.0, 0.0), 159: (0.0, 0.0), 160: (0.0, 0.0), 161: (0.0, 0.0), 162: (0.0, 0.0), 163: (0.0, 0.0), 164: (0.0, 0.0), 165: (0.0, 0.0), 166: (0.0, 0.0), 167: (0.0, 0.0), 168: (0.0, 0.0), 169: (0.0, 0.0), 170: (0.0, 0.0), 171: (0.0, 0.0), 172: (0.0, 0.0), 173: (0.0, 0.0), 174: (0.0, 0.0), 175: (0.0, 0.0), 176: (0.0, 0.0), 177: (0.0, 0.0), 178: (0.0, 0.0), 179: (0.0, 0.0), 180: (0.0, 0.0), 181: (0.0, 0.0), 182: (0.0, 0.0), 183: (0.0, 0.0), 184: (0.0, 0.0), 185: (0.0, 0.0), 186: (0.0, 0.0), 187: (0.0, 0.0), 188: (0.0, 0.0), 189: (0.0, 0.0), 190: (0.0, 0.0), 191: (0.0, 0.0), 192: (0.0, 0.0), 193: (0.0, 0.0), 194: (0.0, 0.0), 195: (0.0, 0.0), 196: (0.0, 0.0), 197: (0.0, 0.0), 198: (0.0, 0.0), 199: (0.0, 0.0), 200: (0.0, 0.0), 201: (0.0, 0.0), 202: (0.0, 0.0), 203: (0.0, 0.0), 204: (0.0, 0.0), 205: (0.0, 0.0), 206: (0.0, 0.0), 207: (0.0, 0.0), 208: (0.0, 0.0), 209: (0.0, 0.0), 210: (0.0, 0.0), 211: (0.0, 0.0), 212: (0.0, 0.0), 213: (0.0, 0.0), 214: (0.0, 0.0), 215: (0.0, 0.0), 216: (1.0, 0.0), 218: (0.0, 2.0), 219: (0.0, 1.0), 220: (0.0, 1.0), 221: (3.0, 0.0), 222: (0.0, 0.0), 223: (0.0, 0.0), 224: (0.0, 0.0), 225: (0.0, 0.0), 226: (0.0, 0.0), 227: (0.0, 0.0), 228: (1.0, 1.0), 229: (1.0, 0.0), 231: (0.0, 0.0), 232: (0.0, 0.0), 234: (0.0, 0.0), 235: (0.0, 0.0), 236: (0.0, 0.0), 237: (0.0, 0.0), 238: (0.0, 0.0), 239: (0.0, 0.0), 240: (0.0, 0.0), 241: (0.0, 0.0), 244: (0.0, 1.0), 245: (0.0, 0.0), 246: (0.0, 0.0), 247: (0.0, 0.0), 248: (0.0, 0.0), 249: (1.0, 0.0)}----------------------------------------ESC---------------------------------------------
+Edge <0,2> Contracted, dom : 2caller :esc
+	All Exclusive source at 2 are  0
+Edge <1,3> Contracted, dom : 3caller :esc
+Edge <2,3> Contracted, dom : 3caller :esc
+	All Exclusive source at 3 are  1 2
+Edge <24,25> Contracted, dom : 25caller :esc
+	All Exclusive source at 25 are  24
+Edge <146,152> Contracted, dom : 152caller :esc
+Edge <151,152> Contracted, dom : 152caller :esc
+	All Exclusive source at 152 are  146 151
+Edge <152,216> Contracted, dom : 216caller :esc
+	All Exclusive source at 216 are  152
+Edge <219,221> Contracted, dom : 221caller :esc
+Edge <220,221> Contracted, dom : 221caller :esc
+	All Exclusive source at 221 are  219 220
+Edge <244,249> Contracted, dom : 249caller :esc
+	All Exclusive source at 249 are  244
+-----------------------------------End of ESC-------------------------------------------
+---------------------------------------SDDC---------------------------------------------
+Edge <228,229> Contracted, dom : 228caller :sddc
+Edge <27,145> Contracted, dom : 27caller :sddc
+Edge <21,25> Contracted, dom : 21caller :sddc
+Edge <8,13> Contracted, dom : 8caller :sddc
+-----------------------------------End of SDDC------------------------------------------
+
+
+-----------------------------------------------------------------------
+
+Segment Graph is as follows: {3: [3, 1, 2, 0], 4: [4], 5: [5], 6: [6], 7: [7], 8: [8, 13], 9: [9], 10: [10], 11: [11], 12: [12], 14: [14], 15: [15], 16: [16], 17: [17], 18: [18], 21: [21, 22, 19, 20, 23, 25, 26, 24], 27: [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 58, 63, 64, 65, 66, 78, 82, 83, 84, 85, 86, 94, 95, 96, 98, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 145], 58: [58, 59, 60, 61, 57, 62], 66: [66, 67, 68, 69, 70, 71, 73, 74, 75, 76, 72], 78: [78, 79, 80, 81, 77], 86: [86, 87, 89, 90, 91, 92, 93, 88], 98: [98, 99, 105, 109, 111, 112, 113, 115, 116, 118, 119, 120, 121, 122, 117, 114, 123, 110, 124, 125, 126, 108, 107, 106, 100, 103, 104, 102, 101, 97], 138: [138, 139, 140, 141, 142, 143, 144, 137], 147: [147], 148: [148], 149: [149], 150: [150], 165: [165, 166, 167, 168, 169, 170, 172, 173, 174, 175, 171, 164, 163], 180: [180, 181, 183, 184, 185, 186, 187, 182], 194: [194, 198, 200, 201, 202, 204, 205, 207, 208, 209, 210, 211, 206, 203, 212, 199, 213, 214, 215, 197, 196, 195, 189, 192, 193, 191, 190], 216: [216, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 165, 176, 177, 178, 179, 180, 188, 194, 146, 151], 217: [217], 218: [218], 221: [221, 222, 223, 224, 225, 226, 227, 219, 220], 228: [228, 229], 230: [230], 231: [231, 232], 233: [233], 234: [234, 235, 236, 237, 238, 239, 240, 241], 242: [242], 243: [243], 249: [249, 244, 245, 246, 247, 248]}
+List of segments extracted are as follows: [234, 194, 180, 165, 138, 98, 86, 78, 66, 58, 21]This is last of log.

@@ -1,0 +1,250 @@
+proc timeDifference toDate fromDate
+rcall getTime getTime_1  fromDate
+rcall getTime getTime_2  toDate
+assign diff  getTime_1 getTime_2
+assign diffSeconds  diff
+assign diffMinutes   diff
+assign diffHours   diff
+assign diffDays   diff
+assign timeDiff  diffSeconds diffMinutes diffHours diffDays
+call print   diffDays
+call print   diffHours
+call print   diffMinutes
+call print   diffSeconds
+return timeDiff
+proc getStudentAssignmentInstructions courseID assignID user
+assign end
+assign defaultSchemaId
+assign assignmentType
+assign assignmentName
+assign instructions
+rcall equals equals_1  user
+if equals_1 1
+assign instructions instructions
+assign instructions instructions  assignID
+rcall equals equals_2  user
+if equals_2 1
+assign instructions instructions
+try 2
+rcall dbConnection dbcon
+try 4
+rcall prepareStatement stmt  dbcon
+call setInt  assignID stmt
+call setString  courseID stmt
+try 3
+rcall executeQuery rs  stmt
+rcall next next_5  rs
+if next_5 23
+rcall getTimestamp end  rs
+rcall getBoolean getBoolean_6  rs
+if getBoolean_6 2
+assign assignmentType
+else 1
+assign assignmentType
+rcall getInt defaultSchemaId  rs
+rcall getString assignmentName  rs
+rcall equals equals_7  user
+if equals_7 2
+assign instructions instructions
+else 1
+invar
+rcall equals equals_8  user
+if equals_8 1
+assign instructions instructions
+assign instructions instructions  assignmentName
+rcall equals equals_9  user
+if equals_9 1
+assign instructions instructions
+rcall equals equals_10  user
+if equals_10 2
+assign instructions instructions
+else 1
+assign instructions instructions
+assign instructions instructions  assignmentType
+rcall equals equals_11  user
+if equals_11 1
+assign instructions instructions
+try 4
+rcall prepareStatement stmt1  dbcon
+call setInt  defaultSchemaId stmt1
+call setString  courseID stmt1
+try 3
+rcall executeQuery rs1  stmt1
+rcall next next_14  rs1
+if next_14 3
+assign instructions instructions
+rcall getString getString_15  rs1
+assign instructions instructions  getString_15 defaultSchemaId
+rcall equals equals_16  user
+if equals_16 2
+assign instructions instructions
+else 1
+assign instructions instructions
+try 8
+rcall prepareStatement stmt1  dbcon
+call setInt  defaultSchemaId stmt1
+call setString  courseID stmt1
+try 3
+rcall executeQuery rs1  stmt1
+rcall next next_19  rs1
+if next_19 4
+assign instructions instructions
+rcall getString getString_20  rs1
+rcall getString getString_21  rs1
+assign instructions instructions  getString_20 getString_21 defaultSchemaId
+rcall equals equals_22  user
+if equals_22 1
+assign instructions instructions
+rcall equals equals_23  user
+if equals_23 7
+assign gson
+rcall getType listType
+rcall getString getString_25  rs
+rcall equalsIgnoreCase equalsIgnoreCase_24  getString_25
+rcall getString getString_26  rs
+rcall getString getString_27  rs
+if   equalsIgnoreCase_24 getString_26 getString_27 4
+rcall getString getString_28  rs
+rcall fromJson dsList  getString_28 listType
+assign instructions instructions
+if  dsList.length dsList 4
+assign i
+loop  dsList.length i 2
+try 3
+rcall executeQuery rs2  stmt1
+rcall next next_29  rs2
+loop next_29 3
+rcall getString getString_31  rs2
+rcall equalsIgnoreCase equalsIgnoreCase_30   dsList i getString_31
+if equalsIgnoreCase_30 4
+rcall getString sampleDataName  rs2
+rcall getString getString_32  rs2
+rcall getString getString_33  rs2
+assign instructions instructions  getString_32 getString_33 defaultSchemaId
+assign i i
+assign instructions instructions
+else 1
+assign instructions instructions
+rcall equals equals_34  user
+if equals_34 10
+assign formatter
+call setLenient  formatter
+rcall format ending  end formatter
+rcall parse oldDate  ending formatter
+rcall getInstance c  Calendar
+rcall getTime getTime_36  c
+rcall format currentDate  getTime_36 formatter
+rcall parse current  currentDate formatter
+rcall compareTo compareTo_37  oldDate current
+if  compareTo_37 5
+assign util
+rcall timeDifference dueTime  current oldDate util
+assign instructions instructions  end
+assign instructions instructions  dueTime
+else 1
+assign instructions instructions  end
+return instructions
+proc getTesterAssignmentInstructions courseID assignID
+assign end
+assign defaultSchemaId
+assign assignmentName
+assign assignmentType
+assign instructions  assignID
+try 2
+rcall dbConnection dbcon
+try 4
+rcall prepareStatement stmt  dbcon
+call setInt  assignID stmt
+call setString  courseID stmt
+try 3
+rcall executeQuery rs  stmt
+rcall next next_3  rs
+if next_3 5
+rcall getInt defaultSchemaId  rs
+rcall getString assignmentName  rs
+assign instructions instructions  assignmentName
+try 4
+rcall prepareStatement stmt1  dbcon
+call setInt  defaultSchemaId stmt1
+call setString  courseID stmt1
+try 3
+rcall executeQuery rs1  stmt1
+rcall next next_6  rs1
+if next_6 3
+assign instructions instructions
+rcall getString getString_7  rs1
+assign instructions instructions  getString_7 defaultSchemaId
+try 11
+rcall prepareStatement stmt1  dbcon
+call setInt  defaultSchemaId stmt1
+call setString  courseID stmt1
+try 3
+rcall executeQuery rs1  stmt1
+rcall next next_10  rs1
+if next_10 4
+assign instructions instructions
+rcall getString getString_11  rs1
+rcall getString getString_12  rs1
+assign instructions instructions  getString_11 getString_12 defaultSchemaId
+assign gson
+rcall getType listType
+rcall getString getString_14  rs
+rcall equalsIgnoreCase equalsIgnoreCase_13  getString_14
+rcall getString getString_15  rs
+rcall getString getString_16  rs
+if   equalsIgnoreCase_13 getString_15 getString_16 4
+rcall getString getString_17  rs
+rcall fromJson dsList  getString_17 listType
+assign instructions instructions
+if  dsList.length dsList 4
+assign i
+loop  dsList.length i 2
+try 3
+rcall executeQuery rs2  stmt1
+rcall next next_18  rs2
+loop next_18 3
+rcall getString getString_20  rs2
+rcall equalsIgnoreCase equalsIgnoreCase_19   dsList i getString_20
+if equalsIgnoreCase_19 4
+rcall getString sampleDataName  rs2
+rcall getString getString_21  rs2
+rcall getString getString_22  rs2
+assign instructions instructions  getString_21 getString_22 defaultSchemaId
+assign i i
+assign instructions instructions
+else 1
+assign instructions instructions
+return instructions
+proc encodeHTML s
+assign out
+assign i
+rcall length length_1  s
+loop  length_1 i 3
+rcall charAt c  i s
+if  c c c c 2
+call append   c out
+else 1
+call append  c out
+assign i i
+rcall toString toString_4  out
+return toString_4
+proc decodeURIComponent s
+if  s 1
+invar
+assign result
+try 4
+rcall replaceAll s  s
+rcall replaceAll s  s
+rcall decode result  s URLDecoder
+catch  2
+assign e
+assign result s
+return result
+proc encodeURIComponent s
+assign result
+try 2
+rcall encode result  s URLEncoder
+catch  2
+assign e
+assign result s
+return result

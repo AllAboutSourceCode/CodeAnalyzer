@@ -1,0 +1,6 @@
+This eclipse-plugin when executing locally for debugging purpose, we need to ensure following ToDos.
+
+
+1. keep the .java files in "runtime-workspace"
+2. keep the python package in "runtime-workspace"
+3. add javapraser library to the project

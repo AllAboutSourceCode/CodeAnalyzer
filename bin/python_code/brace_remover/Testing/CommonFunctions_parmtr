@@ -1,0 +1,262 @@
+1 toDate$ 
+2 fromDate@ getTime_1$ 
+3 toDate@ getTime_2$ 
+4 getTime_1@ getTime_2@ diff$ 
+5 diff@ diffSeconds$ 
+6 diff@ diffMinutes$ 
+7 diff@ diffHours$ 
+8 diff@ diffDays$ 
+9 diffSeconds@ diffMinutes@ diffHours@ diffDays@ timeDiff$ 
+10 diffDays@ 
+11 diffHours@ 
+12 diffMinutes@ 
+13 diffSeconds@ 
+14 timeDiff@ 
+15 courseID$ assignID$ 
+16 end$ 
+17 defaultSchemaId$ 
+18 assignmentType$ 
+19 assignmentName$ 
+20 instructions$ 
+21 user@ equals_1$ 
+22 equals_1@ 
+23 instructions@ instructions$ 
+24 instructions@ assignID@ instructions$ 
+25 user@ equals_2$ 
+26 equals_2@ 
+27 instructions@ instructions$ 
+28 
+29 dbcon$ 
+30 
+31 dbcon@ stmt$ 
+32 assignID@ 
+stmt@ 
+33 courseID@ 
+stmt@ 
+34 
+35 stmt@ rs$ 
+36 rs@ next_5$ 
+37 next_5@ 
+38 rs@ end$ 
+39 rs@ getBoolean_6$ 
+40 getBoolean_6@ 
+41 assignmentType$ 
+42 
+43 assignmentType$ 
+44 rs@ defaultSchemaId$ 
+45 rs@ assignmentName$ 
+46 user@ equals_7$ 
+47 equals_7@ 
+48 instructions@ instructions$ 
+49 
+51 user@ equals_8$ 
+52 equals_8@ 
+53 instructions@ instructions$ 
+54 instructions@ assignmentName@ instructions$ 
+55 user@ equals_9$ 
+56 equals_9@ 
+57 instructions@ instructions$ 
+58 user@ equals_10$ 
+59 equals_10@ 
+60 instructions@ instructions$ 
+61 
+62 instructions@ instructions$ 
+63 instructions@ assignmentType@ instructions$ 
+64 user@ equals_11$ 
+65 equals_11@ 
+66 instructions@ instructions$ 
+67 
+68 dbcon@ stmt1$ 
+69 defaultSchemaId@ 
+stmt1@ 
+70 courseID@ 
+stmt1@ 
+71 
+72 stmt1@ rs1$ 
+73 rs1@ next_14$ 
+74 next_14@ 
+75 instructions@ instructions$ 
+76 rs1@ getString_15$ 
+77 instructions@ getString_15@ defaultSchemaId@ instructions$ 
+78 user@ equals_16$ 
+79 equals_16@ 
+80 instructions@ instructions$ 
+81 
+82 instructions@ instructions$ 
+83 
+84 dbcon@ stmt1$ 
+85 defaultSchemaId@ 
+stmt1@ 
+86 courseID@ 
+stmt1@ 
+87 
+88 stmt1@ rs1$ 
+89 rs1@ next_19$ 
+90 next_19@ 
+91 instructions@ instructions$ 
+92 rs1@ getString_20$ 
+93 rs1@ getString_21$ 
+94 instructions@ getString_20@ getString_21@ defaultSchemaId@ instructions$ 
+95 user@ equals_22$ 
+96 equals_22@ 
+97 instructions@ instructions$ 
+98 user@ equals_23$ 
+99 equals_23@ 
+100 gson$ 
+101 listType$ 
+102 rs@ getString_25$ 
+103 getString_25@ equalsIgnoreCase_24$ 
+104 rs@ getString_26$ 
+105 rs@ getString_27$ 
+106 equalsIgnoreCase_24@ getString_26@ getString_27@ 
+107 rs@ getString_28$ 
+108 getString_28@ listType@ dsList$ 
+109 instructions@ instructions$ 
+110 dsList.length@ dsList@ 
+111 i$ 
+112 dsList.length@ i@ 
+113 
+114 stmt1@ rs2$ 
+115 rs2@ next_29$ 
+116 next_29@ 
+117 rs2@ getString_31$ 
+118 dsList@ i@ getString_31@ equalsIgnoreCase_30$ 
+119 equalsIgnoreCase_30@ 
+120 rs2@ sampleDataName$ 
+121 rs2@ getString_32$ 
+122 rs2@ getString_33$ 
+123 instructions@ getString_32@ getString_33@ defaultSchemaId@ instructions$ 
+124 i@ i$ 
+125 instructions@ instructions$ 
+126 
+127 instructions@ instructions$ 
+128 user@ equals_34$ 
+129 equals_34@ 
+130 formatter$ 
+131 formatter@ 
+132 end@ formatter@ ending$ 
+133 ending@ formatter@ oldDate$ 
+134 Calendar@ c$ 
+135 c@ getTime_36$ 
+136 getTime_36@ formatter@ currentDate$ 
+137 currentDate@ formatter@ current$ 
+138 oldDate@ current@ compareTo_37$ 
+139 compareTo_37@ 
+140 util$ 
+141 current@ oldDate@ util@ dueTime$ 
+142 instructions@ end@ instructions$ 
+143 instructions@ dueTime@ instructions$ 
+144 
+145 instructions@ end@ instructions$ 
+146 instructions@ 
+147 courseID$ 
+148 end$ 
+149 defaultSchemaId$ 
+150 assignmentName$ 
+151 assignmentType$ 
+152 assignID@ instructions$ 
+153 
+154 dbcon$ 
+155 
+156 dbcon@ stmt$ 
+157 assignID@ 
+stmt@ 
+158 courseID@ 
+stmt@ 
+159 
+160 stmt@ rs$ 
+161 rs@ next_3$ 
+162 next_3@ 
+163 rs@ defaultSchemaId$ 
+164 rs@ assignmentName$ 
+165 instructions@ assignmentName@ instructions$ 
+166 
+167 dbcon@ stmt1$ 
+168 defaultSchemaId@ 
+stmt1@ 
+169 courseID@ 
+stmt1@ 
+170 
+171 stmt1@ rs1$ 
+172 rs1@ next_6$ 
+173 next_6@ 
+174 instructions@ instructions$ 
+175 rs1@ getString_7$ 
+176 instructions@ getString_7@ defaultSchemaId@ instructions$ 
+177 
+178 dbcon@ stmt1$ 
+179 defaultSchemaId@ 
+stmt1@ 
+180 courseID@ 
+stmt1@ 
+181 
+182 stmt1@ rs1$ 
+183 rs1@ next_10$ 
+184 next_10@ 
+185 instructions@ instructions$ 
+186 rs1@ getString_11$ 
+187 rs1@ getString_12$ 
+188 instructions@ getString_11@ getString_12@ defaultSchemaId@ instructions$ 
+189 gson$ 
+190 listType$ 
+191 rs@ getString_14$ 
+192 getString_14@ equalsIgnoreCase_13$ 
+193 rs@ getString_15$ 
+194 rs@ getString_16$ 
+195 equalsIgnoreCase_13@ getString_15@ getString_16@ 
+196 rs@ getString_17$ 
+197 getString_17@ listType@ dsList$ 
+198 instructions@ instructions$ 
+199 dsList.length@ dsList@ 
+200 i$ 
+201 dsList.length@ i@ 
+202 
+203 stmt1@ rs2$ 
+204 rs2@ next_18$ 
+205 next_18@ 
+206 rs2@ getString_20$ 
+207 dsList@ i@ getString_20@ equalsIgnoreCase_19$ 
+208 equalsIgnoreCase_19@ 
+209 rs2@ sampleDataName$ 
+210 rs2@ getString_21$ 
+211 rs2@ getString_22$ 
+212 instructions@ getString_21@ getString_22@ defaultSchemaId@ instructions$ 
+213 i@ i$ 
+214 instructions@ instructions$ 
+215 
+216 instructions@ instructions$ 
+217 instructions@ 
+218 
+219 out$ 
+220 i$ 
+221 s@ length_1$ 
+222 length_1@ i@ 
+223 i@ s@ c$ 
+224 c@ c@ c@ c@ 
+225 c@ 
+out@ 
+226 
+227 c@ 
+out@ 
+228 i@ i$ 
+229 out@ toString_4$ 
+230 toString_4@ 
+231 
+232 s@ 
+234 result$ 
+235 
+236 s@ s$ 
+237 s@ s$ 
+238 s@ URLDecoder@ result$ 
+239 
+240 e$ 
+241 s@ result$ 
+242 result@ 
+243 
+244 result$ 
+245 
+246 s@ URLEncoder@ result$ 
+247 
+248 e$ 
+249 s@ result$ 
+250 result@ 

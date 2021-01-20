@@ -1,0 +1,74 @@
+proc source2IR cu path 
+assign fout 
+rcall replaceAll replaceAll_$ 
+call open  replaceAll_$
+assign ce 
+rcall getMethods methodlist  cu
+assign method
+loop methodlist
+rcall getMethodSignature getMethodSignature_$  method
+assign instruction  getMethodSignature_$
+call write  instruction
+call parseMethod  method fout
+}
+Try
+{
+call close 
+}
+catch 
+{
+assign e
+call printStackTrace 
+}
+proc parseMethod method fout2 
+rcall getBody block 
+rcall isPresent isPresent_$ 
+if isPresent_$
+{
+rcall getChildNodes nodeList 
+assign s 
+assign nd
+loop nodeList
+call parseStmt  nd fout
+}
+}
+proc getMethodSignature method 
+rcall getNameAsString getNameAsString_$ 
+assign instruction  getNameAsString_$
+rcall getArgsAsString arglist  method
+assign instruction arglist
+return instruction
+proc getArgs method 
+assign arglist 
+rcall getParameters pmtrs 
+assign p
+loop pmtrs
+assign a
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+if a
+{
+rcall toString toString_$ 
+call add  toString_$
+}
+}
+}
+return arglist
+proc getArgsAsString method 
+assign arglist
+rcall getParameters pmtrs 
+assign p
+loop pmtrs
+assign a
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+if a
+{
+rcall toString toString_$ 
+assign arglist  toString_$
+}
+}
+}
+return arglist

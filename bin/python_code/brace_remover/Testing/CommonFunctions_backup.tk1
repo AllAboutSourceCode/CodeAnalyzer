@@ -1,0 +1,369 @@
+proc timeDifference toDate fromDate #18_2_36_2
+rcall getTime getTime_1  fromDate#20_34_20_51
+rcall getTime getTime_2  toDate#20_15_20_30
+assign diff  getTime_1 getTime_2#20_15_20_51
+assign diffSeconds  diff#22_22_22_37
+assign diffMinutes   diff#23_22_23_44
+assign diffHours   diff#24_20_24_47
+assign diffDays   diff#25_19_25_46
+assign timeDiff  diffSeconds diffMinutes diffHours diffDays#27_21_28_60
+call print   diffDays #30_3_30_40
+call print   diffHours #31_3_31_42
+call print   diffMinutes #32_3_32_46
+call print   diffSeconds #33_3_33_45
+return timeDiff#35_10_35_17
+proc getStudentAssignmentInstructions courseID assignID user #40_2_206_2
+assign end#43_19_43_22
+assign defaultSchemaId#44_25_44_25
+assign assignmentType#45_27_45_28
+assign assignmentName#46_27_46_30
+assign instructions#47_25_47_26
+rcall equals equals_1  user#49_6_49_25
+if equals_1#49_6_49_25
+{
+assign instructions instructions#50_20_50_104
+}
+assign instructions instructions  assignID#53_19_54_20
+rcall equals equals_2  user#55_6_55_25
+if equals_2#55_6_55_25
+{
+assign instructions instructions#56_20_56_26
+}
+try#59_68_203_3
+{
+rcall dbConnection dbcon  #59_26_59_66
+try#62_96_202_4
+{
+rcall prepareStatement stmt  dbcon#61_33_62_94
+call setInt  assignID stmt#63_4_63_27
+call setString  courseID stmt#64_4_64_30
+try#65_43_201_4
+{
+rcall executeQuery rs  stmt#65_23_65_41
+rcall next next_5  rs#66_8_66_16
+if next_5#66_8_66_16
+{
+rcall getTimestamp end  rs#67_11_67_36
+rcall getBoolean getBoolean_6  rs#68_10_68_39
+if getBoolean_6#68_10_68_39
+{
+assign assignmentType#69_21_69_35
+}
+else#71_9_71_9
+{
+assign assignmentType#72_21_72_34
+}
+rcall getInt defaultSchemaId  rs#75_23_75_50
+rcall getString assignmentName  rs#76_22_76_51
+rcall equals equals_7  user#77_9_77_28
+if equals_7#77_8_77_28
+{
+assign instructions instructions#78_22_78_30
+}
+else#79_10_79_10
+{
+}
+rcall equals equals_8  user#82_8_82_27
+if equals_8#82_8_82_27
+{
+assign instructions instructions#83_22_83_84
+}
+assign instructions instructions  assignmentName#85_21_86_39
+rcall equals equals_9  user#87_8_87_27
+if equals_9#87_8_87_27
+{
+assign instructions instructions#88_22_88_28
+}
+rcall equals equals_10  user#90_9_90_28
+if equals_10#90_8_90_28
+{
+assign instructions instructions#91_22_91_30
+}
+else#92_10_92_10
+{
+assign instructions instructions#94_22_94_84
+}
+assign instructions instructions  assignmentType#96_21_97_39
+rcall equals equals_11  user#98_8_98_27
+if equals_11#98_8_98_27
+{
+assign instructions instructions#99_22_99_98
+}
+try#103_103_115_5
+{
+rcall prepareStatement stmt1  dbcon#102_35_103_101
+call setInt  defaultSchemaId stmt1#104_5_104_36
+call setString  courseID stmt1#105_5_105_32
+try#106_46_114_5
+{
+rcall executeQuery rs1  stmt1#106_25_106_44
+rcall next next_14  rs1#107_10_107_19
+if next_14#107_10_107_19
+{
+assign instructions instructions#108_23_108_119
+rcall getString getString_15  rs1#111_11_111_38
+assign instructions instructions  getString_15 defaultSchemaId#109_23_112_28
+}
+}
+}
+rcall equals equals_16  user#117_9_117_28
+if equals_16#117_8_117_28
+{
+assign instructions instructions#118_22_118_30
+}
+else#120_9_120_9
+{
+assign instructions instructions#121_22_121_89
+}
+try#124_122_173_4
+{
+rcall prepareStatement stmt1  dbcon#123_35_124_120
+call setInt  defaultSchemaId stmt1#125_6_125_37
+call setString  courseID stmt1#126_6_126_33
+try#127_47_134_6
+{
+rcall executeQuery rs1  stmt1#127_26_127_45
+rcall next next_19  rs1#128_11_128_20
+if next_19#128_11_128_20
+{
+assign instructions instructions #129_24_130_32
+rcall getString getString_20  rs1#132_83_132_115
+rcall getString getString_21  rs1#132_45_132_74
+assign instructions instructions  getString_20 getString_21 defaultSchemaId#131_24_132_158
+}
+}
+rcall equals equals_22  user#135_9_135_28
+if equals_22#135_9_135_28
+{
+assign instructions instructions#136_23_136_42
+}
+rcall equals equals_23  user#138_10_138_29
+if equals_23#138_9_138_29
+{
+assign gson #140_20_140_29
+rcall getType listType  #141_24_141_61
+rcall getString getString_25  rs#143_53_143_81
+rcall equalsIgnoreCase equalsIgnoreCase_24  getString_25#143_53_143_106
+rcall getString getString_26  rs#143_13_143_41
+rcall getString getString_27  rs#142_13_142_41
+if   equalsIgnoreCase_24 getString_26 getString_27#142_13_143_107
+{
+rcall getString getString_28  rs#144_63_144_91
+rcall fromJson dsList  getString_28 listType #144_43_144_102
+assign instructions instructions #146_26_147_33
+if  dsList.length dsList#150_13_150_48
+{
+assign i#151_36_151_36
+loop  dsList.length i#151_38_151_52
+{
+try#152_68_161_27
+{
+rcall executeQuery rs2  stmt1#152_47_152_66
+rcall next next_29  rs2#153_34_153_43
+loop next_29#153_28_160_28
+{
+rcall getString getString_31  rs2#154_32_154_61
+rcall equalsIgnoreCase equalsIgnoreCase_30   dsList i getString_31#154_32_154_89
+if equalsIgnoreCase_30#154_32_154_89
+{
+rcall getString sampleDataName  rs2#155_54_155_86
+rcall getString getString_32  rs2#157_106_157_138
+rcall getString getString_33  rs2#157_68_157_97
+assign instructions instructions  getString_32 getString_33 defaultSchemaId#156_48_157_173
+}
+}
+}
+assign i i#151_54_151_54
+}
+assign instructions instructions#163_42_163_51
+}
+else#165_14_165_14
+{
+assign instructions instructions#166_27_166_64
+}
+}
+}
+}
+rcall equals equals_34  user#174_9_174_28
+if equals_34#174_8_174_28
+{
+assign formatter  #176_35_177_29
+call setLenient  formatter#178_6_178_32
+rcall format ending  end formatter#179_22_179_42
+rcall parse oldDate  ending formatter#180_31_180_53
+rcall getInstance c  Calendar#182_19_182_40
+rcall getTime getTime_36  c#183_44_183_54
+rcall format currentDate  getTime_36 formatter#183_27_183_55
+rcall parse current  currentDate formatter#184_31_184_58
+rcall compareTo compareTo_37  oldDate current#186_10_186_35
+if  compareTo_37#186_10_186_40
+{
+assign util #188_30_188_50
+rcall timeDifference dueTime  current oldDate util#189_24_189_60
+assign instructions instructions  end#190_24_190_130
+assign instructions instructions  dueTime#191_23_192_38
+}
+else#193_13_193_13
+{
+assign instructions instructions  end#194_23_195_29
+}
+}
+}
+}
+}
+}
+return instructions#205_11_205_22
+proc getTesterAssignmentInstructions courseID assignID #209_2_307_2
+assign end#211_19_211_22
+assign defaultSchemaId#212_25_212_25
+assign assignmentName#213_27_213_30
+assign assignmentType#214_25_214_26
+assign instructions  assignID#215_25_216_22
+try#217_68_305_4
+{
+rcall dbConnection dbcon  #217_26_217_66
+try#220_97_304_4
+{
+rcall prepareStatement stmt  dbcon#219_33_220_95
+call setInt  assignID stmt#221_5_221_28
+call setString  courseID stmt#222_5_222_31
+try#223_44_303_6
+{
+rcall executeQuery rs  stmt#223_24_223_42
+rcall next next_3  rs#224_10_224_18
+if next_3#224_10_224_18
+{
+rcall getInt defaultSchemaId  rs#226_25_226_52
+rcall getString assignmentName  rs#228_24_228_53
+assign instructions instructions  assignmentName#229_23_230_41
+try#234_105_247_7
+{
+rcall prepareStatement stmt1  dbcon#233_36_234_103
+call setInt  defaultSchemaId stmt1#235_8_235_39
+call setString  courseID stmt1#236_8_236_35
+try#237_49_246_8
+{
+rcall executeQuery rs1  stmt1#237_28_237_47
+rcall next next_6  rs1#238_13_238_22
+if next_6#238_13_238_22
+{
+assign instructions instructions #239_26_241_34
+rcall getString getString_7  rs1#244_20_244_47
+assign instructions instructions  getString_7 defaultSchemaId#242_26_244_91
+}
+}
+}
+try#251_124_301_7
+{
+rcall prepareStatement stmt1  dbcon#250_37_251_122
+call setInt  defaultSchemaId stmt1#252_8_252_39
+call setString  courseID stmt1#253_8_253_35
+try#255_49_263_8
+{
+rcall executeQuery rs1  stmt1#255_28_255_47
+rcall next next_10  rs1#256_13_256_22
+if next_10#256_13_256_22
+{
+assign instructions instructions #257_26_259_34
+rcall getString getString_11  rs1#261_85_261_117
+rcall getString getString_12  rs1#261_47_261_76
+assign instructions instructions  getString_11 getString_12 defaultSchemaId#260_26_261_160
+}
+}
+assign gson #267_22_267_31
+rcall getType listType  #268_26_268_63
+rcall getString getString_14  rs#270_55_270_83
+rcall equalsIgnoreCase equalsIgnoreCase_13  getString_14#270_55_270_108
+rcall getString getString_15  rs#270_15_270_43
+rcall getString getString_16  rs#269_15_269_43
+if   equalsIgnoreCase_13 getString_15 getString_16#269_15_270_109
+{
+rcall getString getString_17  rs#271_65_271_93
+rcall fromJson dsList  getString_17 listType #271_45_271_104
+assign instructions instructions #273_28_275_35
+if  dsList.length dsList#277_15_277_50
+{
+assign i#278_38_278_38
+loop  dsList.length i#278_40_278_54
+{
+try#279_70_289_29
+{
+rcall executeQuery rs2  stmt1#279_49_279_68
+rcall next next_18  rs2#280_36_280_45
+loop next_18#280_30_287_30
+{
+rcall getString getString_20  rs2#281_34_281_63
+rcall equalsIgnoreCase equalsIgnoreCase_19   dsList i getString_20#281_34_281_91
+if equalsIgnoreCase_19#281_34_281_91
+{
+rcall getString sampleDataName  rs2#282_56_282_88
+rcall getString getString_21  rs2#284_108_284_140
+rcall getString getString_22  rs2#284_70_284_99
+assign instructions instructions  getString_21 getString_22 defaultSchemaId#283_50_284_175
+}
+}
+}
+assign i i#278_56_278_56
+}
+assign instructions instructions#291_44_291_77
+}
+else#293_16_293_16
+{
+assign instructions instructions#294_29_294_66
+}
+}
+}
+}
+}
+}
+}
+return instructions#306_10_306_21
+proc encodeHTML s #316_2_327_2
+assign out #317_22_317_39
+assign i#318_16_318_16
+rcall length length_1  s#318_23_318_32
+loop  length_1 i#318_19_318_32
+{
+rcall charAt c  i s#319_13_319_23
+if  c c c c#320_8_320_50
+{
+call append   c out#321_5_321_36
+}
+else#322_11_322_11
+{
+call append  c out#323_5_323_17
+}
+assign i i#318_35_318_35
+}
+rcall toString toString_4  out#326_10_326_23
+return toString_4#326_10_326_23
+proc decodeURIComponent s #338_2_357_2
+if  s#339_7_339_15
+{
+invar#340_11_340_14
+}
+assign result#343_19_343_22
+try#345_7_349_3
+{
+rcall replaceAll s  s#346_8_346_49
+rcall replaceAll s  s#347_8_347_33
+rcall decode result  s URLDecoder#348_13_348_41
+}
+catch #351_3_354_3
+{
+assign e#351_3_354_3
+assign result s#352_13_352_13
+}
+return result#356_10_356_15
+proc encodeURIComponent s #368_2_381_2
+assign result#369_19_369_22
+try#371_7_373_3
+{
+rcall encode result  s URLEncoder#372_13_372_41
+}
+catch #376_3_378_3
+{
+assign e#376_3_378_3
+assign result s#377_13_377_13
+}
+return result#380_10_380_15

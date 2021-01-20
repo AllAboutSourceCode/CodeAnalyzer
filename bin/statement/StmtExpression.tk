@@ -1,0 +1,330 @@
+proc parseAssignExpr target value fout 
+assign st 
+if target
+{
+rcall asArrayAccessExpr asArrayAccessExpr_$ 
+rcall parseArrayAccessExpr tstr  asArrayAccessExpr_$ fout
+}
+else
+{
+rcall toString tstr 
+}
+if  value value
+{
+call write   tstr
+}
+else
+{
+if value
+{
+rcall parseBinaryExpr str  fout
+call write   str tstr
+}
+elseif value
+{
+call parseMethodExpr  tstr fout
+}
+elseif value
+{
+call write   value tstr
+}
+elseif value
+{
+rcall parseArrayInitializeExpr str  fout
+if  str
+{
+call write   str tstr
+}
+else
+{
+call write   tstr
+}
+}
+elseif value
+{
+rcall parseObjectCreationExpr argstr  value fout
+call write   argstr tstr
+}
+elseif value
+{
+}
+elseif value
+{
+rcall parseExpression parseExpression_$  value fout
+call write   parseExpression_$ tstr
+}
+else
+{
+rcall getMetaModel getMetaModel_$ 
+call println   getMetaModel_$
+}
+}
+proc parseObjectCreationExpr value fout 
+assign st 
+rcall asObjectCreationExpr ob 
+assign argstr
+assign str
+assign ex
+rcall getArguments getArguments_$ 
+loop getArguments_$
+{
+rcall parseExpression str  ex fout
+if  str
+{
+assign argstr  str
+}
+}
+return argstr
+proc parseMethodExpr m name fout 
+assign str
+assign arg
+rcall getArguments getArguments_$ 
+loop getArguments_$
+{
+if arg
+{
+}
+elseif arg
+{
+rcall toString toString_$ 
+assign str  toString_$
+}
+elseif arg
+{
+rcall parseBinaryExpr parseBinaryExpr_$  fout
+assign str  parseBinaryExpr_$
+}
+elseif arg
+{
+rcall getNameAsString getNameAsString_$ 
+assign str  getNameAsString_$
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr   getNameAsString_$ fout
+}
+elseif arg
+{
+rcall parseArrayAccessExpr parseArrayAccessExpr_$  fout
+assign str  parseArrayAccessExpr_$
+}
+elseif arg
+{
+}
+elseif arg
+{
+rcall toString toString_$ 
+assign str  toString_$
+}
+elseif arg
+{
+rcall parseObjectCreationExpr ret  arg fout
+assign str  ret
+}
+elseif arg
+{
+rcall parseEnclosedExpr parseEnclosedExpr_$  fout
+assign str  parseEnclosedExpr_$
+}
+elseif arg
+{
+rcall parseArrayCreationExpr parseArrayCreationExpr_$  arg fout
+assign str  parseArrayCreationExpr_$
+}
+elseif arg
+{
+}
+else
+{
+rcall getMetaModel getMetaModel_$ 
+call println   getMetaModel_$ arg
+}
+}
+if  name
+{
+rcall getNameAsString getNameAsString_$ 
+call write   str name getNameAsString_$
+}
+else
+{
+rcall getNameAsString getNameAsString_$ 
+call write   str getNameAsString_$
+rcall getNameAsString getNameAsString_$ 
+assign name  getNameAsString_$
+}
+return name
+proc parseArrayCreationExpr arg fout 
+assign str
+assign st 
+assign level
+rcall getLevels getLevels_$ 
+loop getLevels_$
+{
+rcall getDimension e 
+rcall isPresent isPresent_$ 
+if isPresent_$
+{
+rcall get exp 
+if exp
+{
+rcall getNameAsString getNameAsString_$ 
+assign str  getNameAsString_$
+rcall asMethodCallExpr asMethodCallExpr_$ 
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr  asMethodCallExpr_$  getNameAsString_$ fout
+}
+else
+{
+rcall get get_$ 
+rcall parseExpression parseExpression_$  get_$ fout
+assign str  parseExpression_$
+}
+}
+}
+return str
+proc parseArrayAccessExpr arg fout 
+assign st 
+assign argstr
+assign str
+rcall getName getName_$ 
+rcall parseExpression parseExpression_$  getName_$ fout
+assign argstr  parseExpression_$
+call getIndex 
+if getIndex_$
+{
+rcall getNameAsString getNameAsString_$ 
+assign str  getNameAsString_$
+rcall asMethodCallExpr asMethodCallExpr_$ 
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr  asMethodCallExpr_$  getNameAsString_$ fout
+}
+else
+{
+rcall getIndex getIndex_$ 
+rcall parseExpression str  getIndex_$ fout
+}
+if  str
+{
+assign argstr  str
+}
+return argstr
+proc parseArrayInitializeExpr arexpr fout 
+assign st 
+assign argstr
+assign expr
+rcall getValues getValues_$ 
+loop getValues_$
+{
+rcall parseExpression str  expr fout
+if  str
+{
+assign argstr  str
+}
+}
+return argstr
+proc parseBinaryExpr bexpr fout 
+assign st 
+call push  bexpr
+assign argstr
+call empty 
+loop empty_$
+{
+rcall pop expr 
+if expr
+{
+rcall getExpression expr 
+}
+if expr
+{
+rcall toString toString_$ 
+assign argstr  toString_$
+}
+elseif expr
+{
+rcall getNameAsString getNameAsString_$ 
+assign name  getNameAsString_$
+call parseMethodExpr  name fout
+assign argstr  name
+}
+elseif expr
+{
+assign bexpr expr
+assign n
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+if n
+{
+call push 
+}
+}
+}
+elseif expr
+{
+}
+elseif expr
+{
+rcall toString toString_$ 
+assign argstr  toString_$
+}
+elseif expr
+{
+rcall asArrayAccessExpr asArrayAccessExpr_$ 
+rcall parseArrayAccessExpr parseArrayAccessExpr_$  asArrayAccessExpr_$ fout
+assign argstr  parseArrayAccessExpr_$
+}
+elseif expr
+{
+rcall asEnclosedExpr asEnclosedExpr_$ 
+call parseEnclosedExpr  asEnclosedExpr_$ fout
+assign argstr  parseEnclosedExpr_$
+}
+elseif expr
+{
+rcall parseUnaryExpr parseUnaryExpr_$  fout
+assign argstr  parseUnaryExpr_$
+}
+elseif expr
+{
+assign stm 
+rcall asInstanceOfExpr ins 
+rcall getExpression getExpression_$ 
+rcall parseExpression parseExpression_$  getExpression_$ fout
+assign argstr  parseExpression_$
+}
+else
+{
+rcall getMetaModel getMetaModel_$ 
+call println   getMetaModel_$ expr
+}
+}
+return argstr
+proc parseConditionalExpr cexpr fout 
+assign st 
+rcall toString argstr 
+rcall toString str 
+if  
+{
+assign argstr  str
+}
+rcall toString str 
+if  
+{
+assign argstr  str
+}
+return argstr
+proc parseEnclosedExpr expr fout 
+assign st 
+rcall getInner getInner_$ 
+rcall parseExpression parseExpression_$  getInner_$ fout
+return parseExpression_$
+proc parseUnaryExpr expr fout 
+assign st 
+rcall getOperator op 
+rcall getExpression getExpression_$ 
+rcall parseExpression str  getExpression_$ fout
+rcall name name_$ 
+rcall name name_$ 
+if  name_$ name_$
+{
+call write   str str
+}
+return str

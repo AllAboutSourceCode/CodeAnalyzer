@@ -1,0 +1,61 @@
+NOTE:	__init__.py	:	this file empty and is required for import of the files in this folder to another folder.
+
+segmentation.py was modified for generating parameters after the segments are identified.
+
+
+Version 4.0
+-Modified metric.py; now we are computing the data suppliers to each relay node [i.e. backtrack data edges from the relay vertex to begining of the method and include the exclusive source statements also, if any. Note that exclusive source statments may be outside of the inner control block and withing the parent control block.]
+
+LoCS = pCount/ DependentCount_for_each producer
+
+OR
+
+LoCS = pCount/Cumulative_data_count
+-In equation computing "computational strength" of a module the condition has now "<="; before it was "<"
+
+-Esc.py	:	an exclusive source vertex with same parent can only be merged. So,  one small change for checking control region is applied.
+
+-------------------------------------------------------------------------------------------------------------
+Version 3.0
+-	Modified the metric.py; instead of simple ratio of pCount/dCount --->>> now we compute affinity = [pCount/(pCount+dCount)]
+
+-------------------------------------------------------------------------------------------------------------
+Version 2.0.5
+-	Modified the precomputation.py to populate ctrlStatHash for each control block unlike earlier for only primary control blocks
+-	Implemented inclusion of secondary block with target block if the parent block has no significant distinct functionality.
+
+
+CHANGES To Be Tested:
+1. ncec.py:
+	a. Method contractBlock() is moved from extract() back in ncec(). For better comprehensibility.
+	b. Each time a parent is qualified for mergere it is being immediately merged. It helps in computing distinct edge for next parent block. Thus, contractBlock() is placed inside extract() also.
+	c. index variable is passed to few methods and decremented in place after a parent is merged. Thus, no longer we need skip().
+
+2. graph.py:
+	a. A hash named as "degree" is created. Each entry in it contains a pair (indeg, outdeg) of a vertex. A vertex has an entry only if it is not isolated.
+	b. Whenever an edge is contracted, degree of the involved vertices are altered. 
+
+3. metric.py
+	a. Computation of degree will help in computing precise data nodes in parent control blocks. File affected Metric.py.
+-------------------------------------------------------------------------------------------------------------
+Version 2.0.4
+
+NOTE:	This version is in progress.
+-	Need to check on various examples for accurate parent extractions.
+-	After that once check the cases implemented based on distinct producer and other.
+
+
+
+-	Uses option.op file to display various intermediate and final results.
+-	Uses Producer and dEdges (data computation) to decide the extraction of segment.
+-	Only one Link Chain is contracted to the extracted segment. If more than one Link chains are present then none of them are merged.
+-	Chain vertices may have source vertices incident on it but sink vertices are not addressed in this case.
+
+
+
+
+How to Run:
+-	python main.py path_to_input_graph_file_generated_by_sdgExtractor
+
+Input & Support Files:
+-	Input folder must contain input graph file, and ctrLoc file. 

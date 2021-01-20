@@ -1,0 +1,250 @@
+proc timeDifference toDate fromDate  18_2_36_2
+rcall getTime getTime_1  fromDate 20_34_20_51
+rcall getTime getTime_2  toDate 20_15_20_30
+assign diff  getTime_1 getTime_2 20_15_20_51
+assign diffSeconds  diff 22_22_22_37
+assign diffMinutes   diff 23_22_23_44
+assign diffHours   diff 24_20_24_47
+assign diffDays   diff 25_19_25_46
+assign timeDiff  diffSeconds diffMinutes diffHours diffDays 27_21_28_60
+call print   diffDays  30_3_30_40
+call print   diffHours  31_3_31_42
+call print   diffMinutes  32_3_32_46
+call print   diffSeconds  33_3_33_45
+return timeDiff 35_10_35_17
+proc getStudentAssignmentInstructions courseID assignID user  39_2_205_2
+assign end 42_19_42_22
+assign defaultSchemaId 43_25_43_25
+assign assignmentType 44_27_44_28
+assign assignmentName 45_27_45_30
+assign instructions 46_25_46_26
+rcall equals equals_1  user 48_6_48_25
+if equals_1 48_6_48_25 1
+assign instructions instructions 49_20_49_104
+assign instructions instructions  assignID 52_19_53_20
+rcall equals equals_2  user 54_6_54_25
+if equals_2 54_6_54_25 1
+assign instructions instructions 55_20_55_26
+try 58_68_202_3 2
+rcall dbConnection dbcon   58_26_58_66
+try 61_96_201_4 4
+rcall prepareStatement stmt  dbcon 60_33_61_94
+call setInt  assignID stmt 62_4_62_27
+call setString  courseID stmt 63_4_63_30
+try 64_43_200_4 3
+rcall executeQuery rs  stmt 64_23_64_41
+rcall next next_5  rs 65_8_65_16
+if next_5 65_8_65_16 23
+rcall getTimestamp end  rs 66_11_66_36
+rcall getBoolean getBoolean_6  rs 67_10_67_39
+if getBoolean_6 67_10_67_39 2
+assign assignmentType 68_21_68_35
+else 70_9_70_9 1
+assign assignmentType 71_21_71_34
+rcall getInt defaultSchemaId  rs 74_23_74_50
+rcall getString assignmentName  rs 75_22_75_51
+rcall equals equals_7  user 76_9_76_28
+if equals_7 76_8_76_28 2
+assign instructions instructions 77_22_77_30
+else 78_10_78_10 1
+invar
+rcall equals equals_8  user 81_8_81_27
+if equals_8 81_8_81_27 1
+assign instructions instructions 82_22_82_84
+assign instructions instructions  assignmentName 84_21_85_39
+rcall equals equals_9  user 86_8_86_27
+if equals_9 86_8_86_27 1
+assign instructions instructions 87_22_87_28
+rcall equals equals_10  user 89_9_89_28
+if equals_10 89_8_89_28 2
+assign instructions instructions 90_22_90_30
+else 91_10_91_10 1
+assign instructions instructions 93_22_93_84
+assign instructions instructions  assignmentType 95_21_96_39
+rcall equals equals_11  user 97_8_97_27
+if equals_11 97_8_97_27 1
+assign instructions instructions 98_22_98_98
+try 102_103_114_5 4
+rcall prepareStatement stmt1  dbcon 101_35_102_101
+call setInt  defaultSchemaId stmt1 103_5_103_36
+call setString  courseID stmt1 104_5_104_32
+try 105_46_113_5 3
+rcall executeQuery rs1  stmt1 105_25_105_44
+rcall next next_14  rs1 106_10_106_19
+if next_14 106_10_106_19 3
+assign instructions instructions 107_23_107_119
+rcall getString getString_15  rs1 110_11_110_38
+assign instructions instructions  getString_15 defaultSchemaId 108_23_111_28
+rcall equals equals_16  user 116_9_116_28
+if equals_16 116_8_116_28 2
+assign instructions instructions 117_22_117_30
+else 119_9_119_9 1
+assign instructions instructions 120_22_120_89
+try 123_122_172_4 8
+rcall prepareStatement stmt1  dbcon 122_35_123_120
+call setInt  defaultSchemaId stmt1 124_6_124_37
+call setString  courseID stmt1 125_6_125_33
+try 126_47_133_6 3
+rcall executeQuery rs1  stmt1 126_26_126_45
+rcall next next_19  rs1 127_11_127_20
+if next_19 127_11_127_20 4
+assign instructions instructions  128_24_129_32
+rcall getString getString_20  rs1 131_83_131_115
+rcall getString getString_21  rs1 131_45_131_74
+assign instructions instructions  getString_20 getString_21 defaultSchemaId 130_24_131_158
+rcall equals equals_22  user 134_9_134_28
+if equals_22 134_9_134_28 1
+assign instructions instructions 135_23_135_42
+rcall equals equals_23  user 137_10_137_29
+if equals_23 137_9_137_29 7
+assign gson  139_20_139_29
+rcall getType listType   140_24_140_61
+rcall getString getString_25  rs 142_53_142_81
+rcall equalsIgnoreCase equalsIgnoreCase_24  getString_25 142_53_142_106
+rcall getString getString_26  rs 142_13_142_41
+rcall getString getString_27  rs 141_13_141_41
+if   equalsIgnoreCase_24 getString_26 getString_27 141_13_142_107 4
+rcall getString getString_28  rs 143_63_143_91
+rcall fromJson dsList  getString_28 listType  143_43_143_102
+assign instructions instructions  145_26_146_33
+if  dsList.length dsList 149_13_149_48 4
+assign i 150_36_150_36
+loop  dsList.length i 150_38_150_52 2
+try 151_68_160_27 3
+rcall executeQuery rs2  stmt1 151_47_151_66
+rcall next next_29  rs2 152_34_152_43
+loop next_29 152_28_159_28 3
+rcall getString getString_31  rs2 153_32_153_61
+rcall equalsIgnoreCase equalsIgnoreCase_30   dsList i getString_31 153_32_153_89
+if equalsIgnoreCase_30 153_32_153_89 4
+rcall getString sampleDataName  rs2 154_54_154_86
+rcall getString getString_32  rs2 156_106_156_138
+rcall getString getString_33  rs2 156_68_156_97
+assign instructions instructions  getString_32 getString_33 defaultSchemaId 155_48_156_173
+assign i i 150_54_150_54
+assign instructions instructions 162_42_162_51
+else 164_14_164_14 1
+assign instructions instructions 165_27_165_64
+rcall equals equals_34  user 173_9_173_28
+if equals_34 173_8_173_28 10
+assign formatter   175_35_176_29
+call setLenient  formatter 177_6_177_32
+rcall format ending  end formatter 178_22_178_42
+rcall parse oldDate  ending formatter 179_31_179_53
+rcall getInstance c  Calendar 181_19_181_40
+rcall getTime getTime_36  c 182_44_182_54
+rcall format currentDate  getTime_36 formatter 182_27_182_55
+rcall parse current  currentDate formatter 183_31_183_58
+rcall compareTo compareTo_37  oldDate current 185_10_185_35
+if  compareTo_37 185_10_185_40 5
+assign util  187_30_187_50
+rcall timeDifference dueTime  current oldDate util 188_24_188_60
+assign instructions instructions  end 189_24_189_130
+assign instructions instructions  dueTime 190_23_191_38
+else 192_13_192_13 1
+assign instructions instructions  end 193_23_194_29
+return instructions 204_11_204_22
+proc getTesterAssignmentInstructions courseID assignID  208_2_306_2
+assign end 210_19_210_22
+assign defaultSchemaId 211_25_211_25
+assign assignmentName 212_27_212_30
+assign assignmentType 213_25_213_26
+assign instructions  assignID 214_25_215_22
+try 216_68_304_4 2
+rcall dbConnection dbcon   216_26_216_66
+try 219_97_303_4 4
+rcall prepareStatement stmt  dbcon 218_33_219_95
+call setInt  assignID stmt 220_5_220_28
+call setString  courseID stmt 221_5_221_31
+try 222_44_302_6 3
+rcall executeQuery rs  stmt 222_24_222_42
+rcall next next_3  rs 223_10_223_18
+if next_3 223_10_223_18 5
+rcall getInt defaultSchemaId  rs 225_25_225_52
+rcall getString assignmentName  rs 227_24_227_53
+assign instructions instructions  assignmentName 228_23_229_41
+try 233_105_246_7 4
+rcall prepareStatement stmt1  dbcon 232_36_233_103
+call setInt  defaultSchemaId stmt1 234_8_234_39
+call setString  courseID stmt1 235_8_235_35
+try 236_49_245_8 3
+rcall executeQuery rs1  stmt1 236_28_236_47
+rcall next next_6  rs1 237_13_237_22
+if next_6 237_13_237_22 3
+assign instructions instructions  238_26_240_34
+rcall getString getString_7  rs1 243_20_243_47
+assign instructions instructions  getString_7 defaultSchemaId 241_26_243_91
+try 250_124_300_7 11
+rcall prepareStatement stmt1  dbcon 249_37_250_122
+call setInt  defaultSchemaId stmt1 251_8_251_39
+call setString  courseID stmt1 252_8_252_35
+try 254_49_262_8 3
+rcall executeQuery rs1  stmt1 254_28_254_47
+rcall next next_10  rs1 255_13_255_22
+if next_10 255_13_255_22 4
+assign instructions instructions  256_26_258_34
+rcall getString getString_11  rs1 260_85_260_117
+rcall getString getString_12  rs1 260_47_260_76
+assign instructions instructions  getString_11 getString_12 defaultSchemaId 259_26_260_160
+assign gson  266_22_266_31
+rcall getType listType   267_26_267_63
+rcall getString getString_14  rs 269_55_269_83
+rcall equalsIgnoreCase equalsIgnoreCase_13  getString_14 269_55_269_108
+rcall getString getString_15  rs 269_15_269_43
+rcall getString getString_16  rs 268_15_268_43
+if   equalsIgnoreCase_13 getString_15 getString_16 268_15_269_109 4
+rcall getString getString_17  rs 270_65_270_93
+rcall fromJson dsList  getString_17 listType  270_45_270_104
+assign instructions instructions  272_28_274_35
+if  dsList.length dsList 276_15_276_50 4
+assign i 277_38_277_38
+loop  dsList.length i 277_40_277_54 2
+try 278_70_288_29 3
+rcall executeQuery rs2  stmt1 278_49_278_68
+rcall next next_18  rs2 279_36_279_45
+loop next_18 279_30_286_30 3
+rcall getString getString_20  rs2 280_34_280_63
+rcall equalsIgnoreCase equalsIgnoreCase_19   dsList i getString_20 280_34_280_91
+if equalsIgnoreCase_19 280_34_280_91 4
+rcall getString sampleDataName  rs2 281_56_281_88
+rcall getString getString_21  rs2 283_108_283_140
+rcall getString getString_22  rs2 283_70_283_99
+assign instructions instructions  getString_21 getString_22 defaultSchemaId 282_50_283_175
+assign i i 277_56_277_56
+assign instructions instructions 290_44_290_77
+else 292_16_292_16 1
+assign instructions instructions 293_29_293_66
+return instructions 305_10_305_21
+proc encodeHTML s  315_2_326_2
+assign out  316_22_316_39
+assign i 317_16_317_16
+rcall length length_1  s 317_23_317_32
+loop  length_1 i 317_19_317_32 3
+rcall charAt c  i s 318_13_318_23
+if  c c c c 319_8_319_50 2
+call append   c out 320_5_320_36
+else 321_11_321_11 1
+call append  c out 322_5_322_17
+assign i i 317_35_317_35
+rcall toString toString_4  out 325_10_325_23
+return toString_4 325_10_325_23
+proc decodeURIComponent s  337_2_356_2
+if  s 338_7_338_15 1
+invar 339_11_339_14
+assign result 342_19_342_22
+try 344_7_348_3 4
+rcall replaceAll s  s 345_8_345_49
+rcall replaceAll s  s 346_8_346_33
+rcall decode result  s URLDecoder 347_13_347_41
+catch  350_3_353_3 2
+assign e 350_3_353_3
+assign result s 351_13_351_13
+return result 355_10_355_15
+proc encodeURIComponent s  367_2_380_2
+assign result 368_19_368_22
+try 370_7_372_3 2
+rcall encode result  s URLEncoder 371_13_371_41
+catch  375_3_377_3 2
+assign e 375_3_377_3
+assign result s 376_13_376_13
+return result 379_10_379_15

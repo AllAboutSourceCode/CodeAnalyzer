@@ -1,0 +1,564 @@
+proc parseStmt nd fout 
+if nd
+{
+call write 
+}
+elseif nd
+{
+call write 
+}
+elseif nd
+{
+call parseDoStmt  nd fout
+}
+elseif nd
+{
+call parseExprStmt  nd fout
+}
+elseif nd
+{
+call write 
+}
+elseif nd
+{
+call println 
+}
+elseif nd
+{
+call parseForStmt  nd fout
+}
+elseif nd
+{
+call parseForeachStmt  nd fout
+}
+elseif nd
+{
+call parseIfStmt  nd fout
+}
+elseif nd
+{
+call parseReturnStmt  nd fout
+}
+elseif nd
+{
+call parseSwitchStmt  nd fout
+}
+elseif nd
+{
+call parseSwitchEntryStmt  nd fout
+}
+elseif nd
+{
+}
+elseif nd
+{
+call parseTryStmt  nd fout
+}
+elseif nd
+{
+call parseWhileStmt  nd fout
+}
+elseif nd
+{
+call write 
+call println   nd
+}
+elseif nd
+{
+assign child
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+}
+elseif nd
+{
+}
+elseif nd
+{
+call parseExpression  fout
+}
+elseif nd
+{
+call parseSynchronizedStmt  nd fout
+}
+else
+{
+rcall getMetaModel getMetaModel_$ 
+call println   getMetaModel_$ nd
+}
+proc parseExprStmt nd fout 
+rcall getExpression expr 
+call parseExpression  expr fout
+proc parseExpression expr fout 
+assign exprstmt 
+if expr
+{
+assign e expr
+rcall getTarget target 
+rcall getValue value 
+call parseAssignExpr  target value fout
+}
+elseif expr
+{
+call parseArrayAccessExpr  fout
+return parseArrayAccessExpr_$
+}
+elseif expr
+{
+rcall getInitializer init 
+assign str
+rcall isPresent isPresent_$ 
+if isPresent_$
+{
+assign e
+rcall getValues getValues_$ 
+loop getValues_$
+{
+rcall parseExpression str  e fout
+}
+}
+call println   str
+return str
+}
+elseif expr
+{
+call parseArrayInitializeExpr  fout
+return parseArrayInitializeExpr_$
+}
+elseif expr
+{
+call parseBinaryExpr  fout
+return parseBinaryExpr_$
+}
+elseif expr
+{
+rcall getExpression getExpression_$ 
+rcall parseExpression parseExpression_$  getExpression_$ fout
+return parseExpression_$
+}
+elseif expr
+{
+rcall asConditionalExpr asConditionalExpr_$ 
+rcall parseConditionalExpr parseConditionalExpr_$  asConditionalExpr_$ fout
+return parseConditionalExpr_$
+}
+elseif expr
+{
+rcall toString toString_$ 
+return toString_$
+}
+elseif expr
+{
+rcall toString toString_$ 
+return toString_$
+}
+elseif expr
+{
+rcall asInstanceOfExpr iof 
+rcall getExpression getExpression_$ 
+call parseExpression  getExpression_$ fout
+return parseExpression_$
+}
+elseif expr
+{
+call println   expr
+}
+elseif expr
+{
+return 
+}
+elseif expr
+{
+rcall parseMethodExpr parseMethodExpr_$  fout
+return parseMethodExpr_$
+}
+elseif expr
+{
+call println   expr
+}
+elseif expr
+{
+rcall toString toString_$ 
+return toString_$
+}
+elseif expr
+{
+rcall asObjectCreationExpr asObjectCreationExpr_$ 
+rcall parseObjectCreationExpr str  asObjectCreationExpr_$ fout
+call write   str
+return 
+}
+elseif expr
+{
+call println   expr
+}
+elseif expr
+{
+call println   expr
+}
+elseif expr
+{
+rcall toString toString_$ 
+return toString_$
+}
+elseif expr
+{
+rcall parseUnaryExpr parseUnaryExpr_$  fout
+return parseUnaryExpr_$
+}
+elseif expr
+{
+assign v expr
+assign var
+rcall findAll findAll_$ 
+loop findAll_$
+{
+rcall getNameAsExpression target 
+rcall getInitializer getInitializer_$ 
+if  EMPTY getInitializer_$
+{
+rcall get value 
+call parseAssignExpr  target value fout
+}
+}
+}
+else
+{
+call println 
+}
+return 
+proc parseForeachStmt nd fout 
+assign st 
+assign n
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+if n
+{
+rcall toString toString_$ 
+call write   toString_$
+}
+elseif n
+{
+assign stmt
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+call parseStmt  stmt fout
+}
+call write 
+}
+else
+{
+rcall getIterable expr 
+if expr
+{
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr   getNameAsString_$ fout
+rcall getNameAsString getNameAsString_$ 
+call write   getNameAsString_$
+call write 
+}
+else
+{
+rcall parseExpression str  expr fout
+call write   str
+}
+}
+}
+proc parseForStmt nd fout 
+rcall getInitialization getInitialization_$ 
+call parseForInitExpr  getInitialization_$ fout
+rcall getCompare getCompare_$ 
+call parseForCompareExpr  getCompare_$ fout
+call write 
+call parseForBlock  nd fout
+rcall getUpdate getUpdate_$ 
+call parseForUpdateExpr  getUpdate_$ fout
+call write 
+proc parseForBlock for_nd fout 
+assign nd
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+call parseStmt  nd fout
+}
+proc parseForUpdateExpr update fout 
+assign e
+loop update
+loop update
+proc parseForCompareExpr compare fout 
+Try
+{
+rcall isPresent isPresent_$ 
+if isPresent_$
+{
+rcall get cmpExpr 
+if cmpExpr
+{
+assign stex 
+rcall asMethodCallExpr asMethodCallExpr_$ 
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr  asMethodCallExpr_$  getNameAsString_$ fout
+rcall getNameAsString getNameAsString_$ 
+call write   getNameAsString_$
+}
+else
+{
+rcall parseExpression parseExpression_$  cmpExpr fout
+call write   parseExpression_$
+}
+}
+}
+catch 
+{
+assign e
+call println 
+call printStackTrace 
+}
+proc parseForInitExpr initialization fout 
+assign e
+loop initialization
+loop initialization
+proc parseIfStmt nd fout 
+assign ifstmt nd
+rcall getCondition ex 
+if ex
+{
+assign stex 
+rcall asMethodCallExpr asMethodCallExpr_$ 
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr  asMethodCallExpr_$  getNameAsString_$ fout
+rcall getNameAsString getNameAsString_$ 
+call write   getNameAsString_$
+}
+else
+{
+rcall parseExpression parseExpression_$  ex fout
+call write   parseExpression_$
+}
+call write 
+call parseThenStmt  ifstmt fout
+call write 
+call parseElseStmt  ifstmt fout
+proc parseElseStmt ifst fout 
+call get 
+rcall isPresent isPresent_$ 
+loop  get_$ isPresent_$
+{
+rcall asIfStmt ifst 
+rcall getCondition getCondition_$ 
+rcall parseExpression parseExpression_$  getCondition_$ fout
+call write   parseExpression_$
+call write 
+call parseThenStmt  ifst fout
+call write 
+}
+rcall isPresent isPresent_$ 
+if isPresent_$
+{
+call write 
+call write 
+rcall get get_$ 
+call parseStmt  get_$ fout
+call write 
+}
+proc parseThenStmt ifstmt fout 
+assign n
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+if n
+{
+call parseStmt  n fout
+}
+elseif n
+{
+call parseExpression  fout
+}
+elseif n
+{
+}
+else
+{
+rcall getMetaModel getMetaModel_$ 
+call println   getMetaModel_$ n
+}
+}
+proc parseSwitchStmt nd fout 
+assign sw nd
+rcall getSelector getSelector_$ 
+rcall parseExpression parseExpression_$  getSelector_$ fout
+call write   parseExpression_$
+assign entry
+rcall getEntries getEntries_$ 
+loop getEntries_$
+{
+rcall getEntries getEntries_$ 
+loop getEntries_$
+{
+proc parseSwitchEntryStmt nd fout 
+assign entry nd
+call write 
+call write 
+assign st
+rcall getStatements getStatements_$ 
+loop getStatements_$
+{
+rcall getStatements getStatements_$ 
+loop getStatements_$
+{
+call write 
+proc parseSynchronizedStmt nd fout 
+assign sync nd
+rcall getExpression getExpression_$ 
+rcall parseExpression str  getExpression_$ fout
+call write   str
+call write 
+rcall getBody getBody_$ 
+call parseStmt  getBody_$ fout
+call write 
+proc parseWhileStmt nd fout 
+assign whilest nd
+rcall getCondition ex 
+if ex
+{
+assign stex 
+rcall asMethodCallExpr asMethodCallExpr_$ 
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr  asMethodCallExpr_$  getNameAsString_$ fout
+rcall getNameAsString getNameAsString_$ 
+call write   getNameAsString_$
+}
+else
+{
+rcall getCondition getCondition_$ 
+rcall parseExpression parseExpression_$  getCondition_$ fout
+call write   parseExpression_$
+}
+call write 
+rcall getBody getBody_$ 
+call parseStmt  getBody_$ fout
+call write 
+proc parseDoStmt nd fout 
+rcall asDoStmt dost 
+rcall getCondition ex 
+if ex
+{
+assign stex 
+rcall asMethodCallExpr asMethodCallExpr_$ 
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr  asMethodCallExpr_$  getNameAsString_$ fout
+rcall getNameAsString getNameAsString_$ 
+call write   getNameAsString_$
+}
+else
+{
+rcall getCondition getCondition_$ 
+rcall parseExpression parseExpression_$  getCondition_$ fout
+call write   parseExpression_$
+}
+call write 
+rcall getBody getBody_$ 
+call parseStmt  getBody_$ fout
+call write 
+proc parseTryStmt try_nd fout 
+rcall getTryBlock trybk 
+rcall getCatchClauses catchlist 
+rcall getFinallyBlock finbk 
+call write 
+call write 
+rcall getResources resource 
+assign nd
+loop resource
+call parseExpression  nd fout
+}
+call parseTryBlock  trybk fout
+call write 
+assign catchnd
+loop catchlist
+call parseCatchBlock  catchnd fout
+}
+call parseFinallyBlock  finbk fout
+proc parseFinallyBlock finbk fout 
+Try
+{
+rcall get bk 
+call write 
+call write 
+assign nd
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+call parseStmt  nd fout
+}
+call write 
+}
+catch 
+{
+assign e
+}
+proc parseCatchBlock catchnd fout 
+call write 
+call write 
+call getNameAsString 
+call write   getNameAsString_$
+assign nd
+rcall getChildNodes getChildNodes_$ 
+loop getChildNodes_$
+{
+call parseStmt  nd fout
+}
+call write 
+proc parseTryBlock trybk fout 
+rcall getChildNodes nodeList 
+assign nd
+loop nodeList
+call parseStmt  nd fout
+}
+proc parseReturnStmt nd fout 
+assign st 
+rcall getExpression r 
+if  EMPTY r
+{
+rcall get re 
+if re
+{
+call write 
+}
+elseif re
+{
+rcall getNameAsString getNameAsString_$ 
+call parseMethodExpr   getNameAsString_$ fout
+rcall getNameAsString getNameAsString_$ 
+call write   getNameAsString_$
+}
+elseif re
+{
+rcall parseBinaryExpr str  fout
+call write   str
+call write 
+}
+elseif re
+{
+rcall getNameAsString getNameAsString_$ 
+call write   getNameAsString_$
+}
+elseif re
+{
+rcall parseExpression parseExpression_$  re fout
+call write   parseExpression_$
+}
+else
+{
+rcall getMetaModel getMetaModel_$ 
+call println   getMetaModel_$
+}
+}
+else
+{
+call write 
+}
